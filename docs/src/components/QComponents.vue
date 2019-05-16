@@ -26,11 +26,8 @@ body {
 }
 
 .quasar__logo, .circle {
-  width:370px;
-  height:370px;
-  position:absolute;
-  left: 334px;
-  top: 776px;
+  width:380px;
+  height:380px;
 }
 
 .q-tab {
@@ -46,42 +43,44 @@ svg {
 
 </style>
 <template>
-  <div class="column">
-    <div class="q-pa-md">
+  <div class="column relative-position" style="background-image: radial-gradient(circle closest-side, rgba(0,0,0,1),rgba(0,0,0,0));min-width:100%;width:100%;margin-top:300px;height:850px">
+    <div class="absolute-top">
       <q-input
         v-model="filter"
         square
         outlined
-        placeholder="Search"
+        placeholder="Search Components"
         debounce="500"
         class="bg-blue-grey-2"
       />
     </div>
-    <svg width="500" height="300"></svg>
-    <div class="quasar__logo" v-show="!showDialog">
-      <img src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg">
-    </div>
-    <div class="circle" v-if="showDialog" ref="circle">
-      <q-card v-if="focusedComponentIndex !== null" dark flat style="height:80%;margin:22px 30px;background: transparent">
-        <q-btn flat round dense icon="close" @click="showDialog = false" style="position:relative;top:-20px"/>
-         <p>{{ filteredComponents[focusedComponentIndex].name }}</p>
-        <q-tabs v-model="tab" dense style="padding-top:3px">
-          <q-tab name="description" label="Description" />
-          <q-tab name="api" label="API" /> <q-tab name="example" label="Example" />
-        </q-tabs>
-        <q-tab-panels v-model="tab" style="height:160px">
-          <q-tab-panel name="description" class="text-amber-1 bg-black">
-            Test description
-          </q-tab-panel>
-          <q-tab-panel name="api" class="text-amber-1 bg-black">
-            Test API
-          </q-tab-panel>
-          <q-tab-panel name="example" class="text-amber-1 bg-black">
-            Test example
-          </q-tab-panel>
-        </q-tab-panels>
-        <q-btn flat label="full documentation" style="margin-top:18px"></q-btn>
-      </q-card>
+    <div class="row">
+      <svg width="500" height="300" class="absolute-center"></svg>
+      <div class="quasar__logo absolute-center" v-show="!showDialog">
+        <img src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg">
+      </div>
+      <div class="circle absolute-center" v-if="showDialog" ref="circle">
+        <q-card v-if="focusedComponentIndex !== null" dark flat style="height:80%;margin:22px 10px;background: transparent">
+          <q-btn flat round dense icon="close" @click="showDialog = false" style="position:relative;top:-20px"/>
+          <p>{{ filteredComponents[focusedComponentIndex].name }}</p>
+          <q-tabs v-model="tab" dense style="padding-top:3px;">
+            <q-tab name="description" label="Description" />
+            <q-tab name="api" label="API" /> <q-tab name="example" label="Example" />
+          </q-tabs>
+          <q-tab-panels v-model="tab" style="height:200px">
+            <q-tab-panel name="description" class="text-amber-1 bg-black">
+              Test description
+            </q-tab-panel>
+            <q-tab-panel name="api" class="text-amber-1 bg-black">
+              Test API
+            </q-tab-panel>
+            <q-tab-panel name="example" class="text-amber-1 bg-black">
+              Test example
+            </q-tab-panel>
+          </q-tab-panels>
+          <q-btn flat label="full documentation" style="margin-top:18px"></q-btn>
+        </q-card>
+      </div>
     </div>
   </div>
 </template>
