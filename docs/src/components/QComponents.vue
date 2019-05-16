@@ -6,83 +6,85 @@ Links
 Src
   https://github.com/CorpGlory/d3vue/blob/master/src/d3-components/size-controller.vue
 -->
-<style>
-body {
-  background: black;
-  color: #888;
-}
-.quasar__logo {
-  opacity: 0.25;
-}
-.circle {
-  font-size:20px;
-  color:#fff;
-  text-align:center;
-  line-height:0;
-  border-radius:50%;
-  background:#222;
-  opacity: 0.95;
+<style lang="stylus">
+body
+  background: black
+  color: #888
+
+.quasar__logo
+  opacity: 0.25
+
+.circle
+  font-size:20px
+  color:#fff
+  text-align:center
+  line-height:0
+  border-radius:50%
+  background:#222
+  opacity: 0.95
   z-index: 2; /* above svg */
-}
 
-.quasar__logo, .circle {
-  width:380px;
-  height:380px;
-}
+  .q-card
+    height: 80%
+    width: 310px
+    margin: 22px 36px
+    background: transparent
 
-.q-tab {
-  border-radius: 20px 20px 0 0;
-}
-.q-tab-panels {
-  border-radius: 0 0 10px 10px!important;
-}
+    .btn__close
+      position: relative
+      top:-20px
 
-svg {
-  z-index: 1; /* above logo to catch mousemove */
-}
+    .btn__docs
+      margin-top: 18px
 
+    .q-tabs
+      padding-top:3px
+
+    .q-tab
+      border-radius: 20px 20px 0 0
+
+    .q-tab-panels
+      border-radius: 0 0 10px 10px!important
+      height: 190px
+
+.quasar__logo, .circle
+  width:380px
+  height:380px
+
+.components__root
+  background-image: radial-gradient(circle closest-side, rgba(0,0,0,1),rgba(0,0,0,0))
+  min-width:100%
+  width:100%
+  margin-top:300px
+  height:850px
+
+svg
+  width: 500
+  height: 300
+  z-index: 1 /* above logo to catch mousemove */
 </style>
-<template>
-  <div class="column relative-position" style="background-image: radial-gradient(circle closest-side, rgba(0,0,0,1),rgba(0,0,0,0));min-width:100%;width:100%;margin-top:300px;height:850px">
-    <div class="absolute-top">
-      <q-input
-        v-model="filter"
-        square
-        outlined
-        placeholder="Search Components"
-        debounce="500"
-        class="bg-blue-grey-2"
-      />
-    </div>
-    <div class="row">
-      <svg width="500" height="300" class="absolute-center"></svg>
-      <div class="quasar__logo absolute-center" v-show="!showDialog">
-        <img src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg">
-      </div>
-      <div class="circle absolute-center" v-if="showDialog" ref="circle">
-        <q-card v-if="focusedComponentIndex !== null" dark flat style="height:80%;margin:22px 10px;background: transparent">
-          <q-btn flat round dense icon="close" @click="showDialog = false" style="position:relative;top:-20px"/>
-          <p>{{ filteredComponents[focusedComponentIndex].name }}</p>
-          <q-tabs v-model="tab" dense style="padding-top:3px;">
-            <q-tab name="description" label="Description" />
-            <q-tab name="api" label="API" /> <q-tab name="example" label="Example" />
-          </q-tabs>
-          <q-tab-panels v-model="tab" style="height:200px">
-            <q-tab-panel name="description" class="text-amber-1 bg-black">
-              Test description
-            </q-tab-panel>
-            <q-tab-panel name="api" class="text-amber-1 bg-black">
-              Test API
-            </q-tab-panel>
-            <q-tab-panel name="example" class="text-amber-1 bg-black">
-              Test example
-            </q-tab-panel>
-          </q-tab-panels>
-          <q-btn flat label="full documentation" style="margin-top:18px"></q-btn>
-        </q-card>
-      </div>
-    </div>
-  </div>
+
+<template lang="pug">
+  div.column.relative-position.components__root
+    div.absolute-top
+      q-input.bg-blue-grey-2(v-model="filter" square outlined placeholder="Search Components" debounce="500")
+    div.row
+      svg.absolute-center
+      div.quasar__logo.absolute-center(v-show="!showDialog")
+        img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
+      div.circle.absolute-center(v-if="showDialog" ref="circle")
+        q-card(v-if="focusedComponentIndex !== null" dark flat)
+          q-btn.btn__close(flat round dense icon="close" @click="showDialog = false")
+          p {{ filteredComponents[focusedComponentIndex].name }}
+          q-tabs(v-model="tab" dense)
+            q-tab(name="description" label="Description")
+            q-tab(name="api" label="API")
+            q-tab(name="example" label="Example")
+          q-tab-panels(v-model="tab")
+            q-tab-panel.text-amber-1.bg-black(name="description") Test description
+            q-tab-panel.text-amber-1.bg-black(name="api") Test API
+            q-tab-panel.text-amber-1.bg-black(name="example") Test example
+          q-btn.btn__docs(flat label="full documentation")
 </template>
 
 <script>
@@ -145,6 +147,25 @@ export default {
     // Returns the Flare package name for the given class name.
     name: name => name,
 
+    // TODO change impl to "inSvgBounds"
+    toCircle (e, field = 'toElement') {
+      let element = e[field],
+        flag = false
+
+      if (element === null) {
+        return false
+      }
+
+      do {
+        if (element === this.$refs.circle) {
+          flag = true
+        }
+        element = element.parentElement
+      } while (!flag && element != null)
+
+      return flag
+    },
+
     mutateFocusedComponentIndex (amount) {
       if (amount === null) {
         this.focusedComponentIndex = null
@@ -188,7 +209,9 @@ export default {
     __focus (e) {},
 
     __blur (e) {
-      this.focusedComponentIndex = null
+      if (!this.toCircle(e, 'relatedTarget')) {
+        this.focusedComponentIndex = null
+      }
     },
 
     __keydown (e) {
@@ -217,16 +240,7 @@ export default {
         this.showDialog = false
       }
 
-      let element = e.toElement,
-        flag = false
-      do {
-        if (element === this.$refs.circle) {
-          flag = true
-        }
-        element = element.parentElement
-      } while (!flag && element != null)
-
-      if (!flag) {
+      if (!this.toCircle(e)) {
         this.focusedComponentIndex = null
       }
     },
@@ -349,7 +363,6 @@ export default {
         this.hasActiveComponent = hasActiveComponent
       }
       else {
-        console.log('oopsy')
         this.showDialog = false
         for (const chord of this.chords) {
           chord.style.opacity = defaultChordOpacity
