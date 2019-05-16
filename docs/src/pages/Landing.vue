@@ -22,6 +22,8 @@
                 q-btn(push, color="white", text-color="primary", to="/start", label="Get started")
                 .text-body2 v{{ $q.version }}
 
+        q-components
+
       .landing__arrow.absolute-bottom.text-center
         q-icon(name="expand_more").text-h2.text-white
 
