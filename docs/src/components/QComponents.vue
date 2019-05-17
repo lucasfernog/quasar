@@ -16,14 +16,17 @@ Src
   text-align:center
   line-height:0
   border-radius:50%
-  background:#222
+  background:#111
   opacity: 0.95
   z-index: 2; /* above svg */
+  border-width 2px
+  border-style solid
+  border-color black
 
   .q-card
     height: 200px
     width: 310px
-    margin: 22px 36px
+    margin: 22px 36px 22px 33px
     background: transparent
 
     .btn__close
@@ -31,7 +34,7 @@ Src
       top:-20px
 
     .btn__docs
-      margin-top: 14px
+      margin-top: 12px
 
     .q-tabs
       padding-top:3px
@@ -41,7 +44,7 @@ Src
 
     .q-tab-panels
       border-radius: 0 0 10px 10px!important
-      height: 185px
+      height: 180px
 
 .quasar__logo, .circle
   width:380px
@@ -62,8 +65,6 @@ svg
 
 <template lang="pug">
   div.column.relative-position.components__root
-    div.absolute-top
-      q-input.bg-blue-grey-2(v-model="filter" square outlined placeholder="Search Components" debounce="500")
     div.row
       svg.absolute-center
       div.quasar__logo.absolute-center(v-show="!showDialog")
@@ -71,7 +72,17 @@ svg
       div.circle.absolute-center(v-if="showDialog" ref="circle")
         q-card(v-if="focusedComponentIndex !== null" dark flat)
           q-btn.btn__close(flat round dense icon="close" @click="showDialog = false")
-          p {{ filteredComponents[focusedComponentIndex].name }}
+          .row(style="margin-top:-20px")
+            .col-2
+            q-field.col-8(v-if="!search" dense dark rounded outlined bg-color="grey-10")
+              template(v-slot:append)
+                q-btn(flat round size="sm" icon="search" @click="search = true" style="margin-right:-8px")
+              template(v-slot:control)
+                div.self-center.full-width.no-outline(@click="search = true" style="font-weight:800;font-size:1.2em")
+                  span {{ filteredComponents[focusedComponentIndex].name }}
+            q-input.col-8(v-else v-model="filter" rounded outlined dense dark bg-color="grey-10" placeholder="Search Components" debounce="500" ref="search")
+              template(v-slot:append)
+                q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
           q-tabs(v-model="tab" dense)
             q-tab(name="description" label="Description")
             q-tab(name="api" label="API")
@@ -117,7 +128,7 @@ const saturate = function (color, percent) {
     text = '#' + (
       0x1000000 + R * 0x10000 + G * 0x100 + B
     ).toString(16).slice(1)
-  console.log(color, text)
+  // console.log(color, text)
   return text
 }
 
@@ -130,6 +141,7 @@ export default {
   data () {
     return {
       filter: '',
+      search: false,
       components: [],
       focusedComponentIndex: null,
       chords: [],
@@ -339,6 +351,11 @@ export default {
   },
 
   watch: {
+    search (newValue) {
+      if (newValue === true) {
+        this.$refs.search.focus()
+      }
+    },
     focusedComponentIndex (newValue) {
       if (newValue !== null) {
         let hasActiveComponent = false
