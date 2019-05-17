@@ -7,12 +7,8 @@ Src
   https://github.com/CorpGlory/d3vue/blob/master/src/d3-components/size-controller.vue
 -->
 <style lang="stylus">
-body
-  background: black
-  color: #888
-
 .quasar__logo
-  opacity: 0.25
+  opacity: 0.09
 
 .circle
   font-size:20px
@@ -25,7 +21,7 @@ body
   z-index: 2; /* above svg */
 
   .q-card
-    height: 80%
+    height: 200px
     width: 310px
     margin: 22px 36px
     background: transparent
@@ -35,7 +31,7 @@ body
       top:-20px
 
     .btn__docs
-      margin-top: 18px
+      margin-top: 14px
 
     .q-tabs
       padding-top:3px
@@ -45,18 +41,18 @@ body
 
     .q-tab-panels
       border-radius: 0 0 10px 10px!important
-      height: 190px
+      height: 185px
 
 .quasar__logo, .circle
   width:380px
   height:380px
 
 .components__root
-  background-image: radial-gradient(circle closest-side, rgba(0,0,0,1),rgba(0,0,0,0))
+  background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
   min-width:100%
   width:100%
   margin-top:300px
-  height:850px
+  height:750px
 
 svg
   width: 500
@@ -85,6 +81,7 @@ svg
             q-tab-panel.text-amber-1.bg-black(name="api") Test API
             q-tab-panel.text-amber-1.bg-black(name="example") Test example
           q-btn.btn__docs(flat label="full documentation")
+
 </template>
 
 <script>
@@ -419,6 +416,7 @@ export default {
         })
         .style('text-anchor', d => d.angle > Math.PI ? 'end' : null)
         .style('fill', d => fill(d.index))
+        .style('text-shadow', '0 0 3px black, 0 0 4px black ,0 0 5px black')
         .style('cursor', 'pointer')
         .text(d => this.nameByIndex.get(d.index))
 

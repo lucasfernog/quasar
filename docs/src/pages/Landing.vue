@@ -22,10 +22,10 @@
                 q-btn(push, color="white", text-color="primary", to="/start", label="Get started")
                 .text-body2 v{{ $q.version }}
 
-        q-components
-
-      .landing__arrow.absolute-bottom.text-center
+      .landing__arrow.text-center
         q-icon(name="expand_more").text-h2.text-white
+
+      q-components
 
   section.padding.landing__front.text-center
     div
@@ -252,6 +252,7 @@ export default {
     min-height 100vh
 
   &__arrow
+    margin-top 50px
     bottom 8px
     opacity .4
 
