@@ -3,8 +3,8 @@
 const fs = require('fs-extra'),
   readline = require('readline'),
   path = require('path'),
-  quasarPath = '../node_modules/quasar',
-  docPagesPath = '../src/pages',
+  quasarPath = path.join(__dirname, '../node_modules/quasar'),
+  docPagesPath = path.join(__dirname, '../src/pages'),
   componentsPath = path.join(quasarPath, 'src/components'),
   apiPath = path.join(quasarPath, 'dist/api'),
   quasarApi = {}
@@ -78,32 +78,32 @@ Promise.all(apiReadPromises)
 
 fs.readdirSync(componentsPath).forEach(componentDir => {
   const group = 'Q' + componentDir.split('-').map(c => c[0].toUpperCase() + c.slice(1)).join('')
-  fs.readdir(path.join(componentsPath, componentDir), (err, files) => {
-    if (err) {
-      throw err
-    }
+  const compPath = path.join(componentsPath, componentDir)
+  if (fs.lstatSync(compPath).isDirectory()) {
+    fs.readdir(compPath)
+      .then(files => {
+        files.forEach(file => {
+          let component = ''
+          if (file.endsWith('.js') && apis.includes(component = file.replace('.js', ''))) {
+            const componentData = quasarApi[component]
+            componentData.group = group
 
-    files.forEach(file => {
-      let component = ''
-      if (file.endsWith('.js') && apis.includes(component = file.replace('.js', ''))) {
-        const componentData = quasarApi[component]
-        componentData.group = group
+            const componentStream = fs.createReadStream(path.join(componentsPath, componentDir, file))
+            const rl = readline.createInterface({
+              input: componentStream,
+              output: () => {}
+            })
 
-        const componentStream = fs.createReadStream(path.join(componentsPath, componentDir, file))
-        const rl = readline.createInterface({
-          input: componentStream,
-          output: () => {}
-        })
-
-        rl.on('line', line => {
-          let matches = null
-          if ((matches = /import (\S+) from/g.exec(line)) != null && apis.includes(matches[1])) {
-            componentData.imports.push(matches[1])
+            rl.on('line', line => {
+              let matches = null
+              if ((matches = /import (\S+) from/g.exec(line)) != null && apis.includes(matches[1])) {
+                componentData.imports.push(matches[1])
+              }
+            })
           }
         })
-      }
-    })
-  })
+      })
+  }
 })
 
 process.on('exit', () => {
@@ -124,5 +124,5 @@ process.on('exit', () => {
     }
     return false
   })
-  fs.writeFileSync('../src/statics/quasar-api.json', JSON.stringify(components, '', 2))
+  fs.writeFileSync(path.join(__dirname, '../src/statics/quasar-api.json'), JSON.stringify(components, '', 2))
 })
