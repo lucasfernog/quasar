@@ -152,6 +152,13 @@ export default {
     }
   },
 
+  props: {
+    interactive: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   methods: {
     // Returns the Flare package name for the given class name.
     name: name => name,
@@ -322,12 +329,14 @@ export default {
   },
 
   mounted () {
-    const svgEl = this.$el.querySelector('svg')
+    if (this.interactive) {
+      const svgEl = this.$el.querySelector('svg')
 
-    svgEl.addEventListener('mousemove', this.__mouseMove)
-    svgEl.addEventListener('focus', this.__focus)
-    svgEl.addEventListener('keydown', this.__keydown)
-    svgEl.addEventListener('click', this.__click)
+      svgEl.addEventListener('mousemove', this.__mouseMove)
+      svgEl.addEventListener('focus', this.__focus)
+      svgEl.addEventListener('keydown', this.__keydown)
+      svgEl.addEventListener('click', this.__click)
+    }
   },
 
   watch: {
