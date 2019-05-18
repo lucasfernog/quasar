@@ -155,10 +155,7 @@ export default {
   },
 
   props: {
-    interactive: {
-      type: Boolean,
-      default: false
-    },
+    interactive: Boolean,
     dark: Boolean
   },
 
