@@ -206,7 +206,7 @@
         "apiAnchor": "BottomSheet-API"
       }
     },
-    "description": "Bottom Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Bottom Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.\nThe Bottom Sheet always appears above any other components on the page, and must be dismissed in order to interact with the underlying content. When it is triggered, the rest of the page darkens to give more focus to the Bottom Sheet options.\nBottom Sheets can be displayed as a list or as a grid, with icons or with avatars. They can be used either as a component in your Vue file templates, or as a globally available method."
+    "description": "<p>Bottom Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Bottom Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.\nThe Bottom Sheet always appears above any other components on the page, and must be dismissed in order to interact with the underlying content. When it is triggered, the rest of the page darkens to give more focus to the Bottom Sheet options.\nBottom Sheets can be displayed as a list or as a grid, with icons or with avatars. They can be used either as a component in your Vue file templates, or as a globally available method.</p>\n"
   },
   {
     "name": "QAvatar",
@@ -292,7 +292,7 @@
         "apiAnchor": "QAvatar-API"
       }
     },
-    "description": "The QAvatar component creates a scalable, color-able element that can have text, icon or image within its shape. By default it is circular, but it can also be square or have a border-radius applied to give rounded corners to the square shape.\nIt is often used with other components in their slots."
+    "description": "<p>The QAvatar component creates a scalable, color-able element that can have text, icon or image within its shape. By default it is circular, but it can also be square or have a border-radius applied to give rounded corners to the square shape.\nIt is often used with other components in their slots.</p>\n"
   },
   {
     "name": "QBreadcrumbsEl",
@@ -389,7 +389,7 @@
         }
       }
     },
-    "description": "The QBreadcrumbs component is used as a navigational aid in UI. It allows users to keep track of their location within programs, documents, or websites. Most common use is it's in a [QToolbar](/vue-components/toolbar), but it's not limited to it."
+    "description": "<p>The QBreadcrumbs component is used as a navigational aid in UI. It allows users to keep track of their location within programs, documents, or websites. Most common use is it’s in a <doc-link to=\"/vue-components/toolbar\">QToolbar</doc-link>, but it’s not limited to it.</p>\n"
   },
   {
     "name": "QBtn",
@@ -653,7 +653,7 @@
         }
       }
     },
-    "description": "Quasar has a component called QBtn which is a button with a few extra useful features. For instance, it comes in two shapes: rectangle (default) and round. It also has the material ripple effect baked in (which can be disabled).\nThe button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.\nWhen not disabled or spinning, QBtn emits a `@click` event, as soon as it is clicked or tapped."
+    "description": "<p>Quasar has a component called QBtn which is a button with a few extra useful features. For instance, it comes in two shapes: rectangle (default) and round. It also has the material ripple effect baked in (which can be disabled).\nThe button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.\nWhen not disabled or spinning, QBtn emits a <code class=\"doc-token\">@click</code> event, as soon as it is clicked or tapped.</p>\n"
   },
   {
     "name": "QBtnDropdown",
@@ -1097,7 +1097,7 @@
         }
       }
     },
-    "description": "QBtnDropdown is a very convenient dropdown button. Goes very well with [QList](/vue-components/lists-and-list-items) as dropdown content, but it's by no means limited to it.\nIn case you are looking for a dropdown \"input\" instead of \"button\" use [Select](/vue-components/select) instead."
+    "description": "<p>QBtnDropdown is a very convenient dropdown button. Goes very well with <doc-link to=\"/vue-components/lists-and-list-items\">QList</doc-link> as dropdown content, but it’s by no means limited to it.\nIn case you are looking for a dropdown “input” instead of “button” use <doc-link to=\"/vue-components/select\">Select</doc-link> instead.</p>\n"
   },
   {
     "name": "QBtnGroup",
@@ -1168,7 +1168,7 @@
         }
       }
     },
-    "description": "You can conveniently group [QBtn](/vue-components/button) and [QBtnDropdown](/vue-components/button-dropdown) using QBtnGroup. Be sure to check those component's respective pages to see their props and methods."
+    "description": "<p>You can conveniently group <doc-link to=\"/vue-components/button\">QBtn</doc-link> and <doc-link to=\"/vue-components/button-dropdown\">QBtnDropdown</doc-link> using QBtnGroup. Be sure to check those component’s respective pages to see their props and methods.</p>\n"
   },
   {
     "name": "QBtnToggle",
@@ -1400,7 +1400,7 @@
         }
       }
     },
-    "description": "The QBtnToggle component is another basic element for user input, similar to QRadio but with buttons. You can use this to supply a way for the user to pick an option from multiple choices."
+    "description": "<p>The QBtnToggle component is another basic element for user input, similar to QRadio but with buttons. You can use this to supply a way for the user to pick an option from multiple choices.</p>\n"
   },
   {
     "name": "QCard",
@@ -1449,7 +1449,7 @@
         "apiAnchor": "QCard-API"
       }
     },
-    "description": "The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.\nWith so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.\nThe QCard component is intentionally lightweight and essentially a containing element that is capable of \"hosting\" any other component that is appropriate."
+    "description": "<p>The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.\nWith so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.\nThe QCard component is intentionally lightweight and essentially a containing element that is capable of “hosting” any other component that is appropriate.</p>\n"
   },
   {
     "name": "QCardSection",
@@ -1476,7 +1476,7 @@
         }
       }
     },
-    "description": "The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.\nWith so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.\nThe QCard component is intentionally lightweight and essentially a containing element that is capable of \"hosting\" any other component that is appropriate."
+    "description": "<p>The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.\nWith so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.\nThe QCard component is intentionally lightweight and essentially a containing element that is capable of “hosting” any other component that is appropriate.</p>\n"
   },
   {
     "name": "QCarousel",
@@ -1740,7 +1740,7 @@
         "apiAnchor": "QCarousel-API"
       }
     },
-    "description": "The QCarousel component allows you to display more information with less real estate, using slides. Useful for creating Wizards or an image gallery too."
+    "description": "<p>The QCarousel component allows you to display more information with less real estate, using slides. Useful for creating Wizards or an image gallery too.</p>\n"
   },
   {
     "name": "QCheckbox",
@@ -1891,7 +1891,7 @@
         "apiAnchor": "QCheckbox-API"
       }
     },
-    "description": "The QCheckbox component is another basic element for user input. You can use this to supply a way for the user to toggle an option."
+    "description": "<p>The QCheckbox component is another basic element for user input. You can use this to supply a way for the user to toggle an option.</p>\n"
   },
   {
     "name": "QChip",
@@ -2067,7 +2067,7 @@
         "apiAnchor": "QChip-API"
       }
     },
-    "description": "The QChip component is basically a simple UI block entity, representing for example more advanced underlying data, such as a contact, in a compact way.\nChips can contain entities such as an avatar, text or an icon, optionally having a pointer too. They can also be closed or removed if configured so."
+    "description": "<p>The QChip component is basically a simple UI block entity, representing for example more advanced underlying data, such as a contact, in a compact way.\nChips can contain entities such as an avatar, text or an icon, optionally having a pointer too. They can also be closed or removed if configured so.</p>\n"
   },
   {
     "name": "QCircularProgress",
@@ -2234,7 +2234,7 @@
         "apiAnchor": "QCircularProgress-API"
       }
     },
-    "description": "The QCircularProgress component displays a colored circular progress. The bar can either have a determinate progress, or an indeterminate animation. It should be used to inform the user that an action is occurring in the background."
+    "description": "<p>The QCircularProgress component displays a colored circular progress. The bar can either have a determinate progress, or an indeterminate animation. It should be used to inform the user that an action is occurring in the background.</p>\n"
   },
   {
     "name": "QColor",
@@ -2349,7 +2349,7 @@
         }
       }
     },
-    "description": "The QColor component provides a method to input colors."
+    "description": "<p>The QColor component provides a method to input colors.</p>\n"
   },
   {
     "name": "QDate",
@@ -2524,7 +2524,7 @@
         }
       }
     },
-    "description": "The QDate component provides a method to input date. Currently it supports Gregorian (default) and Persian calendars."
+    "description": "<p>The QDate component provides a method to input date. Currently it supports Gregorian (default) and Persian calendars.</p>\n"
   },
   {
     "name": "QDialog",
@@ -2765,7 +2765,7 @@
         "apiAnchor": "QDialog-API"
       }
     },
-    "description": "The QDialog component is a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).\nFrom a UI perspective, you can think of Dialogs as a type of floating modal, which covers only a portion of the screen. This means Dialogs should only be used for quick user actions, like verifying a password, getting a short App notification or selecting an option or options quickly."
+    "description": "<p>The QDialog component is a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).\nFrom a UI perspective, you can think of Dialogs as a type of floating modal, which covers only a portion of the screen. This means Dialogs should only be used for quick user actions, like verifying a password, getting a short App notification or selecting an option or options quickly.</p>\n"
   },
   {
     "name": "QDrawer",
@@ -3046,7 +3046,7 @@
         }
       }
     },
-    "description": "QLayout allows you to configure your views as a 3x3 matrix, containing optional left-side and/or right-side Drawers. If you haven’t already, please read [QLayout](/layout/layout) documentation page first.\nQDrawer is the sidebar part of your QLayout."
+    "description": "<p>QLayout allows you to configure your views as a 3x3 matrix, containing optional left-side and/or right-side Drawers. If you haven’t already, please read <doc-link to=\"/layout/layout\">QLayout</doc-link> documentation page first.\nQDrawer is the sidebar part of your QLayout.</p>\n"
   },
   {
     "name": "QExpansionItem",
@@ -3396,7 +3396,7 @@
         "apiAnchor": "QExpansionItem-API"
       }
     },
-    "description": "The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.\nThey are basically [QItem](/vue-components/list-and-list-items) components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties."
+    "description": "<p>The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.\nThey are basically <doc-link to=\"/vue-components/list-and-list-items\">QItem</doc-link> components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.</p>\n"
   },
   {
     "name": "QFab",
@@ -3601,7 +3601,7 @@
         }
       }
     },
-    "description": "A Floating Action Button (FAB) represents the primary action in a Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.\nNote that you don’t need a QLayout to use FABs."
+    "description": "<p>A Floating Action Button (FAB) represents the primary action in a Page. But, it’s not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.\nNote that you don’t need a QLayout to use FABs.</p>\n"
   },
   {
     "name": "QFabAction",
@@ -3713,7 +3713,7 @@
         }
       }
     },
-    "description": "A Floating Action Button (FAB) represents the primary action in a Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.\nNote that you don’t need a QLayout to use FABs."
+    "description": "<p>A Floating Action Button (FAB) represents the primary action in a Page. But, it’s not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.\nNote that you don’t need a QLayout to use FABs.</p>\n"
   },
   {
     "name": "QField",
@@ -3947,13 +3947,13 @@
           "desc": "Append outer field; Suggestions: QIcon, QBtn"
         },
         "error": {
-          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "hint": {
-          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "counter": {
-          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "loading": {
           "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
@@ -3982,7 +3982,7 @@
         "apiAnchor": "QField-API"
       }
     },
-    "description": "The QField component is used to provide common functionality and aspect to form components. It uses `:value` (or `v-model` if you want to use `clearable` property) to have knowledge of the model of the component inside. It has support for labels, hints, errors, validation, and comes in a variety of styles and colors.\nQField allows you to display any form control (or almost anything as a matter of fact) inside it. Just place your desired content inside the `control` slot."
+    "description": "<p>The QField component is used to provide common functionality and aspect to form components. It uses <code class=\"doc-token\">:value</code> (or <code class=\"doc-token\">v-model</code> if you want to use <code class=\"doc-token\">clearable</code> property) to have knowledge of the model of the component inside. It has support for labels, hints, errors, validation, and comes in a variety of styles and colors.\nQField allows you to display any form control (or almost anything as a matter of fact) inside it. Just place your desired content inside the <code class=\"doc-token\">control</code> slot.</p>\n"
   },
   {
     "name": "QFooter",
@@ -4058,7 +4058,7 @@
         }
       }
     },
-    "description": "QLayout allows you to configure your views as a 3x3 matrix, containing an optional Header and/or Footer (mostly used for navbar, but can be anything). If you haven’t already, please read [QLayout](/layout/layout) documentation page first."
+    "description": "<p>QLayout allows you to configure your views as a 3x3 matrix, containing an optional Header and/or Footer (mostly used for navbar, but can be anything). If you haven’t already, please read <doc-link to=\"/layout/layout\">QLayout</doc-link> documentation page first.</p>\n"
   },
   {
     "name": "QHeader",
@@ -4143,7 +4143,7 @@
         }
       }
     },
-    "description": "QLayout allows you to configure your views as a 3x3 matrix, containing an optional Header and/or Footer (mostly used for navbar, but can be anything). If you haven’t already, please read [QLayout](/layout/layout) documentation page first."
+    "description": "<p>QLayout allows you to configure your views as a 3x3 matrix, containing an optional Header and/or Footer (mostly used for navbar, but can be anything). If you haven’t already, please read <doc-link to=\"/layout/layout\">QLayout</doc-link> documentation page first.</p>\n"
   },
   {
     "name": "QIcon",
@@ -4207,7 +4207,7 @@
         "apiAnchor": "QIcon-API"
       }
     },
-    "description": "The QIcon component allows you to easily insert icons within other components or any other area of your pages.\nQuasar currently supports: [Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons) and [Themify Icons](https://themify.me/themify-icons)."
+    "description": "<p>The QIcon component allows you to easily insert icons within other components or any other area of your pages.\nQuasar currently supports: <doc-link to=\"https://material.io/icons/\">Material Icons</doc-link> , <doc-link to=\"http://fontawesome.io/icons/\">Font Awesome</doc-link>, <doc-link to=\"http://ionicons.com/\">Ionicons</doc-link>, <doc-link to=\"https://materialdesignicons.com/\">MDI</doc-link>, <doc-link to=\"https://akveo.github.io/eva-icons\">Eva Icons</doc-link> and <doc-link to=\"https://themify.me/themify-icons\">Themify Icons</doc-link>.</p>\n"
   },
   {
     "name": "QImg",
@@ -4390,7 +4390,7 @@
         "apiAnchor": "QImg-API"
       }
     },
-    "description": "The QImg component makes working with images easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio)."
+    "description": "<p>The QImg component makes working with images easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio).</p>\n"
   },
   {
     "name": "QInnerLoading",
@@ -4493,7 +4493,7 @@
         "apiAnchor": "QInnerLoading-API"
       }
     },
-    "description": "The QInnerLoading component allows you to add a progress animation within a component. Much like the [Loading Plugin](/vue-components/loading), it's purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. QInnerLoading will add an opaque overlay over the delayed element along with a [Spinner](/vue-components/spinners)."
+    "description": "<p>The QInnerLoading component allows you to add a progress animation within a component. Much like the <doc-link to=\"/vue-components/loading\">Loading Plugin</doc-link>, it’s purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. QInnerLoading will add an opaque overlay over the delayed element along with a <doc-link to=\"/vue-components/spinners\">Spinner</doc-link>.</p>\n"
   },
   {
     "name": "QInput",
@@ -4832,13 +4832,13 @@
           "desc": "Append outer field; Suggestions: QIcon, QBtn"
         },
         "error": {
-          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "hint": {
-          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "counter": {
-          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "loading": {
           "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
@@ -4903,7 +4903,7 @@
         "apiAnchor": "QInput-API"
       }
     },
-    "description": "The QInput component is used to capture text input from the user. It uses `v-model`, similar to a regular input. It has support for errors and validation, and comes in a variety of styles, colors, and types."
+    "description": "<p>The QInput component is used to capture text input from the user. It uses <code class=\"doc-token\">v-model</code>, similar to a regular input. It has support for errors and validation, and comes in a variety of styles, colors, and types.</p>\n"
   },
   {
     "name": "QItem",
@@ -5042,7 +5042,7 @@
         }
       }
     },
-    "description": "The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example [QExpansionItem](/vue-components/expansion-item) or [QSlideItem](/vue-components/slide-item). Also [QSeparator](/vue-components/separator) can be used to split up sections, where needed.\nList Items have the following pre-built child components:\n* **QItemSection** - An item section can have several uses for particular content. They are controlled via the `avatar`, `thumbnail` and `side` props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).\n* **QItemLabel** - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself."
+    "description": "<p>The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example <doc-link to=\"/vue-components/expansion-item\">QExpansionItem</doc-link> or <doc-link to=\"/vue-components/slide-item\">QSlideItem</doc-link>. Also <doc-link to=\"/vue-components/separator\">QSeparator</doc-link> can be used to split up sections, where needed.\nList Items have the following pre-built child components:</p>\n<ul>\n<li><strong>QItemSection</strong> - An item section can have several uses for particular content. They are controlled via the <code class=\"doc-token\">avatar</code>, <code class=\"doc-token\">thumbnail</code> and <code class=\"doc-token\">side</code> props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).</li>\n<li><strong>QItemLabel</strong> - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself.</li>\n</ul>\n"
   },
   {
     "name": "QItemLabel",
@@ -5101,7 +5101,7 @@
         }
       }
     },
-    "description": "The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example [QExpansionItem](/vue-components/expansion-item) or [QSlideItem](/vue-components/slide-item). Also [QSeparator](/vue-components/separator) can be used to split up sections, where needed.\nList Items have the following pre-built child components:\n* **QItemSection** - An item section can have several uses for particular content. They are controlled via the `avatar`, `thumbnail` and `side` props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).\n* **QItemLabel** - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself."
+    "description": "<p>The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example <doc-link to=\"/vue-components/expansion-item\">QExpansionItem</doc-link> or <doc-link to=\"/vue-components/slide-item\">QSlideItem</doc-link>. Also <doc-link to=\"/vue-components/separator\">QSeparator</doc-link> can be used to split up sections, where needed.\nList Items have the following pre-built child components:</p>\n<ul>\n<li><strong>QItemSection</strong> - An item section can have several uses for particular content. They are controlled via the <code class=\"doc-token\">avatar</code>, <code class=\"doc-token\">thumbnail</code> and <code class=\"doc-token\">side</code> props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).</li>\n<li><strong>QItemLabel</strong> - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself.</li>\n</ul>\n"
   },
   {
     "name": "QItemSection",
@@ -5157,7 +5157,7 @@
         }
       }
     },
-    "description": "The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example [QExpansionItem](/vue-components/expansion-item) or [QSlideItem](/vue-components/slide-item). Also [QSeparator](/vue-components/separator) can be used to split up sections, where needed.\nList Items have the following pre-built child components:\n* **QItemSection** - An item section can have several uses for particular content. They are controlled via the `avatar`, `thumbnail` and `side` props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).\n* **QItemLabel** - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself."
+    "description": "<p>The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.\nLists can encapsulate Items or Item-like components, for example <doc-link to=\"/vue-components/expansion-item\">QExpansionItem</doc-link> or <doc-link to=\"/vue-components/slide-item\">QSlideItem</doc-link>. Also <doc-link to=\"/vue-components/separator\">QSeparator</doc-link> can be used to split up sections, where needed.\nList Items have the following pre-built child components:</p>\n<ul>\n<li><strong>QItemSection</strong> - An item section can have several uses for particular content. They are controlled via the <code class=\"doc-token\">avatar</code>, <code class=\"doc-token\">thumbnail</code> and <code class=\"doc-token\">side</code> props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).</li>\n<li><strong>QItemLabel</strong> - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself.</li>\n</ul>\n"
   },
   {
     "name": "QKnob",
@@ -5351,7 +5351,7 @@
         "apiAnchor": "QKnob-API"
       }
     },
-    "description": "The QKnob component is used to take a number input from the user through mouse/touch panning. It is based on [QCircularProgress](/vue-components/circular-progress) and inherits all its properties and behavior."
+    "description": "<p>The QKnob component is used to take a number input from the user through mouse/touch panning. It is based on <doc-link to=\"/vue-components/circular-progress\">QCircularProgress</doc-link> and inherits all its properties and behavior.</p>\n"
   },
   {
     "name": "QLayout",
@@ -5476,7 +5476,7 @@
         }
       }
     },
-    "description": "The QLayout is a component designed to manage the entire window and wrap page content with elements such as a navigational bar or a drawer. Multiple pages can share the same QLayout, so the code is reusable, which is one of their key points.\n**QLayout is NOT mandatory**, but it does help you to better structure your website/app. It has a number of features which offer you major benefits in simplifying your website/app's layout design, right out of the box."
+    "description": "<p>The QLayout is a component designed to manage the entire window and wrap page content with elements such as a navigational bar or a drawer. Multiple pages can share the same QLayout, so the code is reusable, which is one of their key points.\n<strong>QLayout is NOT mandatory</strong>, but it does help you to better structure your website/app. It has a number of features which offer you major benefits in simplifying your website/app’s layout design, right out of the box.</p>\n"
   },
   {
     "name": "QMenu",
@@ -5781,7 +5781,7 @@
         "apiAnchor": "QMenu-API"
       }
     },
-    "description": "The QMenu component is a convenient way to show menus. Goes very well with [QList](/vue-components/list-and-list-items) as dropdown content, but it's by no means limited to it."
+    "description": "<p>The QMenu component is a convenient way to show menus. Goes very well with <doc-link to=\"/vue-components/list-and-list-items\">QList</doc-link> as dropdown content, but it’s by no means limited to it.</p>\n"
   },
   {
     "name": "QOptionGroup",
@@ -5888,7 +5888,7 @@
         "apiAnchor": "QOptionGroup-API"
       }
     },
-    "description": "The QOptionGroup component is a helper component that allows you better control for grouping binary (on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good use for this component is for offering a set of options or settings to turn on and off."
+    "description": "<p>The QOptionGroup component is a helper component that allows you better control for grouping binary (on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good use for this component is for offering a set of options or settings to turn on and off.</p>\n"
   },
   {
     "name": "QPageScroller",
@@ -5976,7 +5976,7 @@
         }
       }
     },
-    "description": "The QPageScroller component helps in placing DOM elements / components wrapped by it into a static position within the content area of your QPage, no matter where the user scrolls.\nThe great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or drawer(s), even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won't occur.\nTry it out with a non-fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won't overlap with the footer.\nEssentially QPageScroller is very similar to QPageSticky. Whereas a QPageSticky componet is always visible a QPageScroller component only appears after a `scroll-offset` (property) is reached. Once visible, the user can click on it to quickly get back to the top of the page via `duration` property."
+    "description": "<p>The QPageScroller component helps in placing DOM elements / components wrapped by it into a static position within the content area of your QPage, no matter where the user scrolls.\nThe great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or drawer(s), even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won’t occur.\nTry it out with a non-fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won’t overlap with the footer.\nEssentially QPageScroller is very similar to QPageSticky. Whereas a QPageSticky componet is always visible a QPageScroller component only appears after a <code class=\"doc-token\">scroll-offset</code> (property) is reached. Once visible, the user can click on it to quickly get back to the top of the page via <code class=\"doc-token\">duration</code> property.</p>\n"
   },
   {
     "name": "QPageSticky",
@@ -6035,7 +6035,7 @@
         }
       }
     },
-    "description": "The QPageSticky component helps in placing DOM elements / components wrapped by it into a static position within the content area of your QPage, no matter where the user scrolls.\nThe great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or drawer(s), even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won't occur.\nTry it out with a non-fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won't overlap with the footer."
+    "description": "<p>The QPageSticky component helps in placing DOM elements / components wrapped by it into a static position within the content area of your QPage, no matter where the user scrolls.\nThe great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or drawer(s), even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won’t occur.\nTry it out with a non-fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won’t overlap with the footer.</p>\n"
   },
   {
     "name": "QPagination",
@@ -6192,7 +6192,7 @@
         "apiAnchor": "QPagination-API"
       }
     },
-    "description": "The QPagination component is available for whenever a pagination system is required. It offers the user a simple UI for moving between items or pages.\nThere are two modes in which QPagination operates: with buttons only or with an inputbox. The latter allows the user to go to a specific page by clicking/tapping on the inputbox, typing the page number then hitting Enter key. If the new page number is within valid limits, the model will be changed accordingly."
+    "description": "<p>The QPagination component is available for whenever a pagination system is required. It offers the user a simple UI for moving between items or pages.\nThere are two modes in which QPagination operates: with buttons only or with an inputbox. The latter allows the user to go to a specific page by clicking/tapping on the inputbox, typing the page number then hitting Enter key. If the new page number is within valid limits, the model will be changed accordingly.</p>\n"
   },
   {
     "name": "QPopupEdit",
@@ -6374,7 +6374,7 @@
         "apiAnchor": "QPopupEdit-API"
       }
     },
-    "description": "The QPopupEdit component can be used to edit a value “in place”, like for example a cell in QTable. By default, a cell is displayed as a String, then if you are using QPopupEdit and a user clicks/taps on the table cell, a popup will open where the user will be able to edit the value using a textfield.\nThis component injects a [QMenu](/vue-components/menu) into its parent DOM element and enables the behavior described above, so **it can be used anywhere**, not only in QTable."
+    "description": "<p>The QPopupEdit component can be used to edit a value “in place”, like for example a cell in QTable. By default, a cell is displayed as a String, then if you are using QPopupEdit and a user clicks/taps on the table cell, a popup will open where the user will be able to edit the value using a textfield.\nThis component injects a <doc-link to=\"/vue-components/menu\">QMenu</doc-link> into its parent DOM element and enables the behavior described above, so <strong>it can be used anywhere</strong>, not only in QTable.</p>\n"
   },
   {
     "name": "QPopupProxy",
@@ -6528,7 +6528,7 @@
         "apiAnchor": "QPopupProxy-API"
       }
     },
-    "description": "QPopupProxy should be used when you need either a [QMenu](/vue-components/menu) (on bigger screens) or a [QDialog](/vue-components/dialog) (on smaller screens) to be displayed. It acts as a proxy which picks between what of the two components to use. QPopupProxy also handles context-menus."
+    "description": "<p>QPopupProxy should be used when you need either a <doc-link to=\"/vue-components/menu\">QMenu</doc-link> (on bigger screens) or a <doc-link to=\"/vue-components/dialog\">QDialog</doc-link> (on smaller screens) to be displayed. It acts as a proxy which picks between what of the two components to use. QPopupProxy also handles context-menus.</p>\n"
   },
   {
     "name": "QPullToRefresh",
@@ -6608,7 +6608,7 @@
         "apiAnchor": "QPullToRefresh-API"
       }
     },
-    "description": "The QPullToRefresh is a component that allows the user to pull down in order to refresh page content (or retrieve the newest content)."
+    "description": "<p>The QPullToRefresh is a component that allows the user to pull down in order to refresh page content (or retrieve the newest content).</p>\n"
   },
   {
     "name": "QRadio",
@@ -6731,7 +6731,7 @@
         "apiAnchor": "QRadio-API"
       }
     },
-    "description": "The QRadio component is another basic element for user input. You can use this to supply a way for the user to pick an option from multiple choices."
+    "description": "<p>The QRadio component is another basic element for user input. You can use this to supply a way for the user to pick an option from multiple choices.</p>\n"
   },
   {
     "name": "QRating",
@@ -6832,7 +6832,7 @@
         "apiAnchor": "QRating-API"
       }
     },
-    "description": "Quasar Rating is a Component which allows users to rate items, usually known as “Star Rating”."
+    "description": "<p>Quasar Rating is a Component which allows users to rate items, usually known as “Star Rating”.</p>\n"
   },
   {
     "name": "QResizeObserver",
@@ -6902,7 +6902,7 @@
         "apiAnchor": "QResizeObserver-API"
       }
     },
-    "description": "QResizeObserver is a Quasar component that emits a `resize` event whenever the wrapping DOM element / component (defined as direct parent of QResizeObserver) changes its size (width and/or height). Note that no polling is involved, but overusing it is costly too."
+    "description": "<p>QResizeObserver is a Quasar component that emits a <code class=\"doc-token\">resize</code> event whenever the wrapping DOM element / component (defined as direct parent of QResizeObserver) changes its size (width and/or height). Note that no polling is involved, but overusing it is costly too.</p>\n"
   },
   {
     "name": "QRouteTab",
@@ -7063,7 +7063,7 @@
         }
       }
     },
-    "description": "Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to [Layouts](/layout/layout) and [Header & Footer](/layout/header-and-footer#Example--Playing-with-QTabs) for references."
+    "description": "<p>Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to <doc-link to=\"/layout/layout\">Layouts</doc-link> and <doc-link to=\"/layout/header-and-footer#Example--Playing-with-QTabs\">Header &amp; Footer</doc-link> for references.</p>\n"
   },
   {
     "name": "QScrollArea",
@@ -7155,7 +7155,7 @@
         "apiAnchor": "QScrollArea-API"
       }
     },
-    "description": "The QScrollArea component offers a neat way of customizing the scrollbars by encapsulating your content. Think of it as a DOM element which has `overflow: auto`, but with your own custom styled scrollbar instead of browser's default one and a few nice features on top.\nThis is especially useful for desktop as scrollbars are hidden on a mobile device. When on a mobile device, QScrollArea simply wraps the content in a `<div>` configured for default browser scrolling."
+    "description": "<p>The QScrollArea component offers a neat way of customizing the scrollbars by encapsulating your content. Think of it as a DOM element which has <code class=\"doc-token\">overflow: auto</code>, but with your own custom styled scrollbar instead of browser’s default one and a few nice features on top.\nThis is especially useful for desktop as scrollbars are hidden on a mobile device. When on a mobile device, QScrollArea simply wraps the content in a <code class=\"doc-token\">&lt;div&gt;</code> configured for default browser scrolling.</p>\n"
   },
   {
     "name": "QScrollObserver",
@@ -7244,7 +7244,7 @@
         "apiAnchor": "QScrollObserver-API"
       }
     },
-    "description": "QScrollObserver is a Quasar component that emits a `scroll` event whenever the user scrolls the page or overflowed container with `.scroll` CSS class applied to it."
+    "description": "<p>QScrollObserver is a Quasar component that emits a <code class=\"doc-token\">scroll</code> event whenever the user scrolls the page or overflowed container with <code class=\"doc-token\">.scroll</code> CSS class applied to it.</p>\n"
   },
   {
     "name": "QSelect",
@@ -7701,13 +7701,13 @@
           "desc": "Append outer field; Suggestions: QIcon, QBtn"
         },
         "error": {
-          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "hint": {
-          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "counter": {
-          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+          "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <p>"
         },
         "loading": {
           "desc": "Override default spinner when component is in loading mode; Suggestion: spinners"
@@ -7718,7 +7718,7 @@
       },
       "scopedSlots": {
         "no-option": {
-          "desc": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <div>",
+          "desc": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <p>",
           "scope": {
             "inputValue": {
               "type": "String",
@@ -8064,7 +8064,7 @@
         "apiAnchor": "QSelect-API"
       }
     },
-    "description": "The QSelect component has two types of selection: single or multiple. This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.\nIn case you are looking for a dropdown \"button\" instead of \"input\" use [Button Dropdown](/vue-components/button-dropdown) instead."
+    "description": "<p>The QSelect component has two types of selection: single or multiple. This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.\nIn case you are looking for a dropdown “button” instead of “input” use <doc-link to=\"/vue-components/button-dropdown\">Button Dropdown</doc-link> instead.</p>\n"
   },
   {
     "name": "QSeparator",
@@ -8117,7 +8117,7 @@
         }
       }
     },
-    "description": "The QSeparator Component is used to separate sections of text, other components, etc... It creates a colored line across the width of the parent. It can be horizontal or vertical."
+    "description": "<p>The QSeparator Component is used to separate sections of text, other components, etc… It creates a colored line across the width of the parent. It can be horizontal or vertical.</p>\n"
   },
   {
     "name": "QSlideItem",
@@ -8232,7 +8232,7 @@
         "apiAnchor": "QSlideItem-API"
       }
     },
-    "description": "The QSlideItem component is essentially a [QItem](/vue-components/list-and-list-items) with two additional slots (`left` and `right`) which allows user to drag the item (through mouse or with the finger on a touch device) to one of the sides in order to apply a specific action."
+    "description": "<p>The QSlideItem component is essentially a <doc-link to=\"/vue-components/list-and-list-items\">QItem</doc-link> with two additional slots (<code class=\"doc-token\">left</code> and <code class=\"doc-token\">right</code>) which allows user to drag the item (through mouse or with the finger on a touch device) to one of the sides in order to apply a specific action.</p>\n"
   },
   {
     "name": "QSlideTransition",
@@ -8271,7 +8271,7 @@
         "apiAnchor": "QSlideTransition-API"
       }
     },
-    "description": "QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside `v-show` and `v-if` on a single element, similar to Vue's Transition component with the only difference being that it's not a group transition too (it only applies to one DOM element or component)."
+    "description": "<p>QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside <code class=\"doc-token\">v-show</code> and <code class=\"doc-token\">v-if</code> on a single element, similar to Vue’s Transition component with the only difference being that it’s not a group transition too (it only applies to one DOM element or component).</p>\n"
   },
   {
     "name": "QSlider",
@@ -8429,7 +8429,7 @@
         "apiAnchor": "QSlider-API"
       }
     },
-    "description": "The QSlider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values. The slider also has a focus indicator (highlighted slider button), which allows for keyboard adjustments of the slider.\nAlso check its “sibling”, the [QRange](/vue-components/range) component."
+    "description": "<p>The QSlider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values. The slider also has a focus indicator (highlighted slider button), which allows for keyboard adjustments of the slider.\nAlso check its “sibling”, the <doc-link to=\"/vue-components/range\">QRange</doc-link> component.</p>\n"
   },
   {
     "name": "QSpinner",
@@ -8485,7 +8485,7 @@
         }
       }
     },
-    "description": "A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations."
+    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
   },
   {
     "name": "QSplitter",
@@ -8625,7 +8625,7 @@
         }
       }
     },
-    "description": "The QSplitter component allow containers to be split vertically and/or horizontally through a draggable separator bar."
+    "description": "<p>The QSplitter component allow containers to be split vertically and/or horizontally through a draggable separator bar.</p>\n"
   },
   {
     "name": "QStep",
@@ -8785,7 +8785,7 @@
         }
       }
     },
-    "description": "A Stepper conveys progress through numbered steps. Steppers display progress\nthrough a sequence of logical and numbered steps. They may also be used for\nnavigation. It's usually useful when the user has to follow steps to complete a\nprocess, like in a [wizard](https://en.wikipedia.org/wiki/Wizard_(software))."
+    "description": "<p>A Stepper conveys progress through numbered steps. Steppers display progress\nthrough a sequence of logical and numbered steps. They may also be used for\nnavigation. It’s usually useful when the user has to follow steps to complete a\nprocess, like in a <doc-link to=\"https://en.wikipedia.org/wiki/Wizard_(software)\">wizard</doc-link>.</p>\n"
   },
   {
     "name": "QTab",
@@ -8902,7 +8902,7 @@
         }
       }
     },
-    "description": "Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to [Layouts](/layout/layout) and [Header & Footer](/layout/header-and-footer#Example--Playing-with-QTabs) for references."
+    "description": "<p>Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to <doc-link to=\"/layout/layout\">Layouts</doc-link> and <doc-link to=\"/layout/header-and-footer#Example--Playing-with-QTabs\">Header &amp; Footer</doc-link> for references.</p>\n"
   },
   {
     "name": "QTabPanel",
@@ -8949,7 +8949,7 @@
         }
       }
     },
-    "description": "Tab panels are a way of displaying more information using less window real estate."
+    "description": "<p>Tab panels are a way of displaying more information using less window real estate.</p>\n"
   },
   {
     "name": "QTabPanels",
@@ -9114,7 +9114,7 @@
         "apiAnchor": "QTabPanels-API"
       }
     },
-    "description": "Tab panels are a way of displaying more information using less window real estate."
+    "description": "<p>Tab panels are a way of displaying more information using less window real estate.</p>\n"
   },
   {
     "name": "QTabs",
@@ -9278,7 +9278,7 @@
         "apiAnchor": "QTabs-API"
       }
     },
-    "description": "Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to [Layouts](/layout/layout) and [Header & Footer](/layout/header-and-footer#Example--Playing-with-QTabs) for references."
+    "description": "<p>Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to <doc-link to=\"/layout/layout\">Layouts</doc-link> and <doc-link to=\"/layout/header-and-footer#Example--Playing-with-QTabs\">Header &amp; Footer</doc-link> for references.</p>\n"
   },
   {
     "name": "QTh",
@@ -9318,7 +9318,7 @@
         }
       }
     },
-    "description": "QTable is a component that allows you to display data in a tabular manner. It's generally called a datatable. It packs the following main features:\n  * Filtering\n  * Sorting\n  * Single / Multiple rows selection with custom selection actions\n  * Pagination (including server-side if required)\n  * Grid mode (you can use for example QCards to display data in a non-tabular manner)\n  * Total customization of rows and cells through scoped slots\n  * Ability to add additional row(s) at top or bottom of data rows\n  * Column picker (through QTableColumns component described in one of the sections)\n  * Custom top and/or bottom Table controls\n  * Responsive design"
+    "description": "<p>QTable is a component that allows you to display data in a tabular manner. It’s generally called a datatable. It packs the following main features:</p>\n<ul>\n<li>Filtering</li>\n<li>Sorting</li>\n<li>Single / Multiple rows selection with custom selection actions</li>\n<li>Pagination (including server-side if required)</li>\n<li>Grid mode (you can use for example QCards to display data in a non-tabular manner)</li>\n<li>Total customization of rows and cells through scoped slots</li>\n<li>Ability to add additional row(s) at top or bottom of data rows</li>\n<li>Column picker (through QTableColumns component described in one of the sections)</li>\n<li>Custom top and/or bottom Table controls</li>\n<li>Responsive design</li>\n</ul>\n"
   },
   {
     "name": "QTime",
@@ -9477,7 +9477,7 @@
         "apiAnchor": "QTime-API"
       }
     },
-    "description": "The QTime component provides a method to input time."
+    "description": "<p>The QTime component provides a method to input time.</p>\n"
   },
   {
     "name": "QTimelineEntry",
@@ -9580,7 +9580,7 @@
         }
       }
     },
-    "description": "The QTimeline component displays a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates alongside itself and usually events. Timelines can use any time scale, depending on the subject and data.\nQTimeline has 3 layouts:\n- `dense` (default) is showing headings, titles, subtitles and content on the **timeline-specified side** of the time line (default on right)\n- `comfortable` is showing headings, titles and content on the **timeline-specified side** of the time line (default on right) and the subtitles on the other side\n- `loose` is showing headings on center, titles and content on the **entry-specified side** of the time line (default on right) and the subtitles on the other side"
+    "description": "<p>The QTimeline component displays a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates alongside itself and usually events. Timelines can use any time scale, depending on the subject and data.\nQTimeline has 3 layouts:</p>\n<ul>\n<li><code class=\"doc-token\">dense</code> (default) is showing headings, titles, subtitles and content on the <strong>timeline-specified side</strong> of the time line (default on right)</li>\n<li><code class=\"doc-token\">comfortable</code> is showing headings, titles and content on the <strong>timeline-specified side</strong> of the time line (default on right) and the subtitles on the other side</li>\n<li><code class=\"doc-token\">loose</code> is showing headings on center, titles and content on the <strong>entry-specified side</strong> of the time line (default on right) and the subtitles on the other side</li>\n</ul>\n"
   },
   {
     "name": "QToggle",
@@ -9745,7 +9745,7 @@
         "apiAnchor": "QToggle-API"
       }
     },
-    "description": "The QToggle component is another basic element for user input. You can use this for turning settings, features or true/ false inputs on and off."
+    "description": "<p>The QToggle component is another basic element for user input. You can use this for turning settings, features or true/ false inputs on and off.</p>\n"
   },
   {
     "name": "QTree",
@@ -10290,7 +10290,7 @@
         }
       }
     },
-    "description": "Quasar Tree represents a highly configurable component that displays hierarchical data, such as a table of contents in a tree structure."
+    "description": "<p>Quasar Tree represents a highly configurable component that displays hierarchical data, such as a table of contents in a tree structure.</p>\n"
   },
   {
     "name": "TouchPan",
@@ -10476,6 +10476,6 @@
         "apiAnchor": "API"
       }
     },
-    "description": "Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe`, `v-touch-hold` and even `v-touch-repeat`.\n> **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.\nWe will be describing `v-touch-pan` on the lines below."
+    "description": "<p>Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: <code class=\"doc-token\">v-touch-pan</code>, <code class=\"doc-token\">v-touch-swipe</code>, <code class=\"doc-token\">v-touch-hold</code> and even <code class=\"doc-token\">v-touch-repeat</code>.</p>\n<blockquote class=\"doc-note\">\n<p><strong>These directives also work with mouse events, not only touch events</strong>, so you are able to build cool functionality for your App on desktops too.\nWe will be describing <code class=\"doc-token\">v-touch-pan</code> on the lines below.</p>\n</blockquote>\n"
   }
 ]

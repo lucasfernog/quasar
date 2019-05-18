@@ -49,6 +49,13 @@ Src
       .q-scrollarea
         height: 160px
 
+      p
+        line-height: 1
+        height: 140px
+        overflow-y: auto
+        margin-bottom 0
+        text-align left
+
 .quasar__logo, .circle
   width:380px
   height:380px
@@ -92,7 +99,7 @@ svg
             q-tab(name="description" label="Description")
             q-tab(name="related" label="Related")
           q-tab-panels(v-model="tab")
-            q-tab-panel.text-amber-1.bg-black(name="description") Test description
+            q-tab-panel.text-amber-1.bg-black(name="description" v-html="filteredComponents[focusedComponentIndex].description")
             q-tab-panel.text-amber-1.bg-black.q-px-none(name="related")
               q-list(dense dark)
                 q-scroll-area(:thumb-style="thumbStyle")

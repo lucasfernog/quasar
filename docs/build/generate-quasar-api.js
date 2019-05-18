@@ -3,6 +3,10 @@
 const fs = require('fs-extra'),
   readline = require('readline'),
   path = require('path'),
+  md = require('./md'),
+  {
+    parseFrontMatter
+  } = require('./md-loader-utils'),
   quasarPath = path.join(__dirname, '../node_modules/quasar'),
   docPagesPath = path.join(__dirname, '../src/pages'),
   componentsPath = path.join(quasarPath, 'src/components'),
@@ -63,7 +67,7 @@ Promise.all(apiReadPromises)
         else if (dashCount === 2 && line.length !== 0) {
           if (line.startsWith(':::') || line.startsWith('##')) {
             dashCount++ // breaks description +=
-            quasarApi[apiName].description = description
+            quasarApi[apiName].description = md.render(parseFrontMatter(description).content)
           }
           else {
             if (description) {
