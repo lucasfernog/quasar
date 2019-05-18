@@ -96,7 +96,7 @@ svg
             q-tab-panel.text-amber-1.bg-black.q-px-none(name="related")
               q-list(dense dark)
                 q-scroll-area(:thumb-style="thumbStyle")
-                  q-item(@click="onRelatedClick(related)" clickable v-ripple v-for="related in filteredComponents[focusedComponentIndex].related" :key="related")
+                  q-item(@click="onRelatedClick(related)" clickable v-ripple v-for="related in focusedComponentRelated" :key="related")
                     q-item-section {{ related }}
 
           q-btn.btn__docs(flat label="full documentation")
@@ -276,6 +276,13 @@ export default {
       }
     },
 
+    focusedComponentRelated () {
+      const component = this.filteredComponents[this.focusedComponentIndex]
+      return component.imports.concat(
+        component.related.filter(item => component.imports.indexOf(item) < 0)
+      )
+    },
+
     filteredComponents () {
       if (this.filter) {
         let filter = this.filter.toLowerCase(),
@@ -283,7 +290,7 @@ export default {
 
         this.components.forEach(c => {
           if (c.name.toLowerCase().includes(filter) || c.group.toLowerCase().includes(filter)) {
-            include = include.concat(c.related)
+            include = include.concat(c.imports)
             include.push(c.name)
           }
         })
@@ -329,7 +336,7 @@ export default {
           for (var i = -1; ++i < n;) row[i] = 0
         }
 
-        d.related.forEach(d => {
+        d.imports.forEach(d => {
           row[this.indexByName.get(this.name(d))]++
         })
       })

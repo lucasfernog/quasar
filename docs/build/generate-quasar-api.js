@@ -7,37 +7,36 @@ const fs = require('fs-extra'),
   docPagesPath = '../src/pages',
   componentsPath = path.join(quasarPath, 'src/components'),
   apiPath = path.join(quasarPath, 'dist/api'),
-  quasarApi = {},
-  docPages = {
-    component: 'vue-components',
-    directive: 'vue-directives',
-    plugin: 'quasar-plugins'
-  }
+  quasarApi = {}
+
+const apiReadPromises = []
 
 const apis = fs.readdirSync(apiPath)
   .map(fileName => fileName.replace('.json', ''))
 apis
   .forEach(apiName => {
     quasarApi[apiName] = {
+      imports: [],
       related: []
     }
 
-    fs.readFile(path.join(apiPath, apiName + '.json'), 'UTF-8', (err, data) => {
-      if (err) {
-        throw err
-      }
-
+    const promise = fs.readFile(path.join(apiPath, apiName + '.json'), 'UTF-8').then(data => {
       const api = JSON.parse(data)
       quasarApi[apiName].api = api
+    })
 
-      let apiDocFileName = apiName.startsWith('Q') ? apiName.slice(1) : apiName
-      apiDocFileName = apiDocFileName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+    apiReadPromises.push(promise)
+  })
 
+Promise.all(apiReadPromises)
+  .then(() => {
+    apis.forEach(apiName => {
+      const api = quasarApi[apiName].api
       const docStream = fs.createReadStream(
         path.join(
           docPagesPath, 
-          (api.docs && api.docs.route) || docPages[api.type], 
-          ((api.docs && api.docs.page) || apiDocFileName) + '.md'
+          api.docs.route, 
+          api.docs.page + '.md'
         )
       )
 
@@ -48,6 +47,16 @@ apis
       let dashCount = 0
       let description = ''
       rl.on('line', line => {
+        if (dashCount === 1 && line.startsWith('  - ')) {
+          let tokens = line.replace('  - /', '').split('/')
+          let relatedRoute = tokens.slice(0, tokens.length - 1).join('/')
+          let relatedPage = tokens[tokens.length - 1]
+          for (let other in quasarApi) {
+            if (quasarApi[other].api.docs.route === relatedRoute && quasarApi[other].api.docs.page === relatedPage) {
+              quasarApi[apiName].related.push(other)
+            }
+          }
+        }
         if (line.startsWith('---')) {
           dashCount++
         }
@@ -89,7 +98,7 @@ fs.readdirSync(componentsPath).forEach(componentDir => {
         rl.on('line', line => {
           let matches = null
           if ((matches = /import (\S+) from/g.exec(line)) != null && apis.includes(matches[1])) {
-            componentData.related.push(matches[1])
+            componentData.imports.push(matches[1])
           }
         })
       }
@@ -104,12 +113,12 @@ process.on('exit', () => {
       ...entry[1]
     }
   }).filter(comp => {
-    if (comp.related.length) {
+    if (comp.imports.length) {
       return true
     }
     for (let otherCompName in quasarApi) {
       const otherComp = quasarApi[otherCompName]
-      if (otherComp.name !== comp.name && otherComp.related.includes(comp.name)) {
+      if (otherComp.name !== comp.name && otherComp.imports.includes(comp.name)) {
         return true
       }
     }

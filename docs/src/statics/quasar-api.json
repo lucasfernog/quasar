@@ -1,6 +1,7 @@
-[{
+[
+  {
     "name": "BottomSheet",
-    "related": [
+    "imports": [
       "QDialog",
       "QIcon",
       "QSeparator",
@@ -8,6 +9,10 @@
       "QCardSection",
       "QItem",
       "QItemSection"
+    ],
+    "related": [
+      "Dialog",
+      "QDialog"
     ],
     "group": "QDialogBottomSheet",
     "api": {
@@ -194,15 +199,21 @@
           },
           "injectionPoint": true
         }
+      },
+      "docs": {
+        "page": "bottom-sheet",
+        "route": "quasar-plugins",
+        "apiAnchor": "BottomSheet-API"
       }
     },
     "description": "Bottom Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Bottom Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.\nThe Bottom Sheet always appears above any other components on the page, and must be dismissed in order to interact with the underlying content. When it is triggered, the rest of the page darkens to give more focus to the Bottom Sheet options.\nBottom Sheets can be displayed as a list or as a grid, with icons or with avatars. They can be used either as a component in your Vue file templates, or as a globally available method."
   },
   {
     "name": "QAvatar",
-    "related": [
+    "imports": [
       "QIcon"
     ],
+    "related": [],
     "group": "QAvatar",
     "api": {
       "type": "component",
@@ -274,20 +285,28 @@
         "default": {
           "desc": "Optional; Suggestions: one character string, <img> tag"
         }
+      },
+      "docs": {
+        "page": "avatar",
+        "route": "vue-components",
+        "apiAnchor": "QAvatar-API"
       }
     },
     "description": "The QAvatar component creates a scalable, color-able element that can have text, icon or image within its shape. By default it is circular, but it can also be square or have a border-radius applied to give rounded corners to the square shape.\nIt is often used with other components in their slots."
   },
   {
     "name": "QBreadcrumbsEl",
-    "related": [
+    "imports": [
       "QIcon"
     ],
+    "related": [],
     "group": "QBreadcrumbs",
     "api": {
       "type": "component",
       "docs": {
-        "page": "breadcrumbs"
+        "page": "breadcrumbs",
+        "route": "vue-components",
+        "apiAnchor": "QBreadcrumbsEl-API"
       },
       "behavior": {
         "$listeners": {
@@ -374,15 +393,22 @@
   },
   {
     "name": "QBtn",
-    "related": [
+    "imports": [
       "QIcon",
       "QSpinner"
+    ],
+    "related": [
+      "QBtnGroup",
+      "QBtnDropdown",
+      "QBtnToggle"
     ],
     "group": "QBtn",
     "api": {
       "type": "component",
       "docs": {
-        "page": "button"
+        "page": "button",
+        "route": "vue-components",
+        "apiAnchor": "QBtn-API"
       },
       "behavior": {
         "$listeners": {
@@ -631,17 +657,23 @@
   },
   {
     "name": "QBtnDropdown",
-    "related": [
+    "imports": [
       "QIcon",
       "QBtn",
       "QBtnGroup",
       "QMenu"
     ],
+    "related": [
+      "QBtn",
+      "QBtnGroup"
+    ],
     "group": "QBtn",
     "api": {
       "type": "component",
       "docs": {
-        "page": "button-dropdown"
+        "page": "button-dropdown",
+        "route": "vue-components",
+        "apiAnchor": "QBtnDropdown-API"
       },
       "props": {
         "value": {
@@ -1069,12 +1101,19 @@
   },
   {
     "name": "QBtnGroup",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QBtn",
+      "QBtnDropdown",
+      "QBtnToggle"
+    ],
     "group": "QBtn",
     "api": {
       "type": "component",
       "docs": {
-        "page": "button-group"
+        "page": "button-group",
+        "route": "vue-components",
+        "apiAnchor": "QBtnGroup-API"
       },
       "behavior": {
         "$listeners": {
@@ -1133,15 +1172,27 @@
   },
   {
     "name": "QBtnToggle",
-    "related": [
+    "imports": [
       "QBtn",
       "QBtnGroup"
+    ],
+    "related": [
+      "QBtn",
+      "QRouteTab",
+      "QTab",
+      "QTabs",
+      "QOptionGroup",
+      "QRadio",
+      "QCheckbox",
+      "QToggle"
     ],
     "group": "QBtn",
     "api": {
       "type": "component",
       "docs": {
-        "page": "button-toggle"
+        "page": "button-toggle",
+        "route": "vue-components",
+        "apiAnchor": "QBtnToggle-API"
       },
       "behavior": {
         "$listeners": {
@@ -1353,7 +1404,10 @@
   },
   {
     "name": "QCard",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QSeparator"
+    ],
     "group": "QCard",
     "api": {
       "type": "component",
@@ -1388,18 +1442,28 @@
         "default": {
           "desc": "Default slot in the devland unslotted content of the component"
         }
+      },
+      "docs": {
+        "page": "card",
+        "route": "vue-components",
+        "apiAnchor": "QCard-API"
       }
     },
     "description": "The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.\nWith so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.\nThe QCard component is intentionally lightweight and essentially a containing element that is capable of \"hosting\" any other component that is appropriate."
   },
   {
     "name": "QCardSection",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QSeparator"
+    ],
     "group": "QCard",
     "api": {
       "type": "component",
       "docs": {
-        "page": "card"
+        "page": "card",
+        "route": "vue-components",
+        "apiAnchor": "QCardSection-API"
       },
       "behavior": {
         "$listeners": {
@@ -1416,9 +1480,10 @@
   },
   {
     "name": "QCarousel",
-    "related": [
+    "imports": [
       "QBtn"
     ],
+    "related": [],
     "group": "QCarousel",
     "api": {
       "type": "component",
@@ -1668,13 +1733,24 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "carousel",
+        "route": "vue-components",
+        "apiAnchor": "QCarousel-API"
       }
     },
     "description": "The QCarousel component allows you to display more information with less real estate, using slides. Useful for creating Wizards or an image gallery too."
   },
   {
     "name": "QCheckbox",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QToggle",
+      "QOptionGroup",
+      "QRadio",
+      "QBtnToggle"
+    ],
     "group": "QCheckbox",
     "api": {
       "type": "component",
@@ -1808,14 +1884,24 @@
         "toggle": {
           "desc": "Toggle the state (of the model)"
         }
+      },
+      "docs": {
+        "page": "checkbox",
+        "route": "vue-components",
+        "apiAnchor": "QCheckbox-API"
       }
     },
     "description": "The QCheckbox component is another basic element for user input. You can use this to supply a way for the user to toggle an option."
   },
   {
     "name": "QChip",
-    "related": [
+    "imports": [
       "QIcon"
+    ],
+    "related": [
+      "QAvatar",
+      "QIcon",
+      "QBadge"
     ],
     "group": "QChip",
     "api": {
@@ -1974,13 +2060,44 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "chip",
+        "route": "vue-components",
+        "apiAnchor": "QChip-API"
       }
     },
     "description": "The QChip component is basically a simple UI block entity, representing for example more advanced underlying data, such as a contact, in a compact way.\nChips can contain entities such as an avatar, text or an icon, optionally having a pointer too. They can also be closed or removed if configured so."
   },
   {
     "name": "QCircularProgress",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QLinearProgress",
+      "QInnerLoading",
+      "QSpinner",
+      "QSpinnerAudio",
+      "QSpinnerBall",
+      "QSpinnerBars",
+      "QSpinnerComment",
+      "QSpinnerCube",
+      "QSpinnerDots",
+      "QSpinnerFacebook",
+      "QSpinnerGears",
+      "QSpinnerGrid",
+      "QSpinnerHearts",
+      "QSpinnerHourglass",
+      "QSpinnerInfinity",
+      "QSpinnerIos",
+      "QSpinnerOval",
+      "QSpinnerPie",
+      "QSpinnerPuff",
+      "QSpinnerRadio",
+      "QSpinnerRings",
+      "QSpinnerTail",
+      "Loading",
+      "LoadingBar"
+    ],
     "group": "QCircularProgress",
     "api": {
       "type": "component",
@@ -2110,13 +2227,18 @@
         "default": {
           "desc": "Used for component content only if 'show-value' prop is set; Make sure the content has enough space to be displayed inside the component"
         }
+      },
+      "docs": {
+        "page": "circular-progress",
+        "route": "vue-components",
+        "apiAnchor": "QCircularProgress-API"
       }
     },
-    "description": "The QCircularProgress component displays a colored circular proress. The bar can either have a determinate progress, or an indeterminate animation. It should be used to inform the user that an action is occurring in the background."
+    "description": "The QCircularProgress component displays a colored circular progress. The bar can either have a determinate progress, or an indeterminate animation. It should be used to inform the user that an action is occurring in the background."
   },
   {
     "name": "QColor",
-    "related": [
+    "imports": [
       "TouchPan",
       "QSlider",
       "QIcon",
@@ -2125,11 +2247,14 @@
       "QTabPanels",
       "QTabPanel"
     ],
+    "related": [],
     "group": "QColor",
     "api": {
       "type": "component",
       "docs": {
-        "page": "color-picker"
+        "page": "color-picker",
+        "route": "vue-components",
+        "apiAnchor": "QColor-API"
       },
       "props": {
         "value": {
@@ -2228,14 +2353,20 @@
   },
   {
     "name": "QDate",
-    "related": [
+    "imports": [
       "QBtn"
+    ],
+    "related": [
+      "QTime",
+      "QField"
     ],
     "group": "QDatetime",
     "api": {
       "type": "component",
       "docs": {
-        "apiAnchor": "API"
+        "apiAnchor": "API",
+        "page": "date",
+        "route": "vue-components"
       },
       "behavior": {
         "$listeners": {
@@ -2397,7 +2528,15 @@
   },
   {
     "name": "QDialog",
-    "related": [],
+    "imports": [],
+    "related": [
+      "Dialog",
+      "ClosePopup",
+      "QCard",
+      "QCardActions",
+      "QCardSection",
+      "QPopupProxy"
+    ],
     "group": "QDialog",
     "api": {
       "type": "component",
@@ -2619,21 +2758,34 @@
           },
           "desc": "Triggers component to toggle between show/hide"
         }
+      },
+      "docs": {
+        "page": "dialog",
+        "route": "vue-components",
+        "apiAnchor": "QDialog-API"
       }
     },
     "description": "The QDialog component is a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).\nFrom a UI perspective, you can think of Dialogs as a type of floating modal, which covers only a portion of the screen. This means Dialogs should only be used for quick user actions, like verifying a password, getting a short App notification or selecting an option or options quickly."
   },
   {
     "name": "QDrawer",
-    "related": [
+    "imports": [
       "TouchPan"
+    ],
+    "related": [
+      "QLayout",
+      "QItem",
+      "QItemLabel",
+      "QItemSection",
+      "QList"
     ],
     "group": "QLayout",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "drawer"
+        "page": "drawer",
+        "apiAnchor": "QDrawer-API"
       },
       "props": {
         "value": {
@@ -2898,13 +3050,21 @@
   },
   {
     "name": "QExpansionItem",
-    "related": [
+    "imports": [
       "QItem",
       "QItemSection",
       "QItemLabel",
       "QIcon",
       "QSlideTransition",
       "QSeparator"
+    ],
+    "related": [
+      "QItem",
+      "QItemLabel",
+      "QItemSection",
+      "QList",
+      "QSlideItem",
+      "QSlideTransition"
     ],
     "group": "QList",
     "api": {
@@ -3229,22 +3389,33 @@
           },
           "desc": "Triggers component to toggle between show/hide"
         }
+      },
+      "docs": {
+        "page": "expansion-item",
+        "route": "vue-components",
+        "apiAnchor": "QExpansionItem-API"
       }
     },
     "description": "The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.\nThey are basically [QItem](/vue-components/list-and-list-items) components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties."
   },
   {
     "name": "QFab",
-    "related": [
+    "imports": [
       "QBtn",
       "QIcon"
+    ],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer"
     ],
     "group": "QFab",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "floating-action-button"
+        "page": "floating-action-button",
+        "apiAnchor": "QFab-API"
       },
       "behavior": {
         "$listeners": {
@@ -3434,15 +3605,21 @@
   },
   {
     "name": "QFabAction",
-    "related": [
+    "imports": [
       "QBtn"
+    ],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer"
     ],
     "group": "QFab",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "floating-action-button"
+        "page": "floating-action-button",
+        "apiAnchor": "QFabAction-API"
       },
       "behavior": {
         "$listeners": {
@@ -3540,10 +3717,11 @@
   },
   {
     "name": "QField",
-    "related": [
+    "imports": [
       "QIcon",
       "QSpinner"
     ],
+    "related": [],
     "group": "QField",
     "api": {
       "type": "component",
@@ -3797,21 +3975,40 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "field",
+        "route": "vue-components",
+        "apiAnchor": "QField-API"
       }
     },
     "description": "The QField component is used to provide common functionality and aspect to form components. It uses `:value` (or `v-model` if you want to use `clearable` property) to have knowledge of the model of the component inside. It has support for labels, hints, errors, validation, and comes in a variety of styles and colors.\nQField allows you to display any form control (or almost anything as a matter of fact) inside it. Just place your desired content inside the `control` slot."
   },
   {
     "name": "QFooter",
-    "related": [
+    "imports": [
       "QResizeObserver"
+    ],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer",
+      "QToolbar",
+      "QToolbarTitle",
+      "QBreadcrumbs",
+      "QBreadcrumbsEl",
+      "QRouteTab",
+      "QTab",
+      "QTabs",
+      "QBar"
     ],
     "group": "QLayout",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "header-and-footer"
+        "page": "header-and-footer",
+        "apiAnchor": "QFooter-API"
       },
       "behavior": {
         "$listeners": {
@@ -3865,15 +4062,29 @@
   },
   {
     "name": "QHeader",
-    "related": [
+    "imports": [
       "QResizeObserver"
+    ],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer",
+      "QToolbar",
+      "QToolbarTitle",
+      "QBreadcrumbs",
+      "QBreadcrumbsEl",
+      "QRouteTab",
+      "QTab",
+      "QTabs",
+      "QBar"
     ],
     "group": "QLayout",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "header-and-footer"
+        "page": "header-and-footer",
+        "apiAnchor": "QHeader-API"
       },
       "behavior": {
         "$listeners": {
@@ -3936,6 +4147,7 @@
   },
   {
     "name": "QIcon",
+    "imports": [],
     "related": [],
     "group": "QIcon",
     "api": {
@@ -3988,14 +4200,41 @@
         "default": {
           "desc": "Suggestions: QTooltip or QMenu"
         }
+      },
+      "docs": {
+        "page": "icon",
+        "route": "vue-components",
+        "apiAnchor": "QIcon-API"
       }
     },
     "description": "The QIcon component allows you to easily insert icons within other components or any other area of your pages.\nQuasar currently supports: [Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons) and [Themify Icons](https://themify.me/themify-icons)."
   },
   {
     "name": "QImg",
-    "related": [
+    "imports": [
       "QSpinner"
+    ],
+    "related": [
+      "QSpinner",
+      "QSpinnerAudio",
+      "QSpinnerBall",
+      "QSpinnerBars",
+      "QSpinnerComment",
+      "QSpinnerCube",
+      "QSpinnerDots",
+      "QSpinnerFacebook",
+      "QSpinnerGears",
+      "QSpinnerGrid",
+      "QSpinnerHearts",
+      "QSpinnerHourglass",
+      "QSpinnerInfinity",
+      "QSpinnerIos",
+      "QSpinnerOval",
+      "QSpinnerPie",
+      "QSpinnerPuff",
+      "QSpinnerRadio",
+      "QSpinnerRings",
+      "QSpinnerTail"
     ],
     "group": "QImg",
     "api": {
@@ -4144,14 +4383,45 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "img",
+        "route": "vue-components",
+        "apiAnchor": "QImg-API"
       }
     },
     "description": "The QImg component makes working with images easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio)."
   },
   {
     "name": "QInnerLoading",
-    "related": [
+    "imports": [
       "QSpinner"
+    ],
+    "related": [
+      "QLinearProgress",
+      "QCircularProgress",
+      "QSpinner",
+      "QSpinnerAudio",
+      "QSpinnerBall",
+      "QSpinnerBars",
+      "QSpinnerComment",
+      "QSpinnerCube",
+      "QSpinnerDots",
+      "QSpinnerFacebook",
+      "QSpinnerGears",
+      "QSpinnerGrid",
+      "QSpinnerHearts",
+      "QSpinnerHourglass",
+      "QSpinnerInfinity",
+      "QSpinnerIos",
+      "QSpinnerOval",
+      "QSpinnerPie",
+      "QSpinnerPuff",
+      "QSpinnerRadio",
+      "QSpinnerRings",
+      "QSpinnerTail",
+      "Loading",
+      "LoadingBar"
     ],
     "group": "QInnerLoading",
     "api": {
@@ -4216,15 +4486,21 @@
         "default": {
           "desc": "Default slot is used for replacing default Spinner; Suggestions: a spinner or text"
         }
+      },
+      "docs": {
+        "page": "inner-loading",
+        "route": "vue-components",
+        "apiAnchor": "QInnerLoading-API"
       }
     },
     "description": "The QInnerLoading component allows you to add a progress animation within a component. Much like the [Loading Plugin](/vue-components/loading), it's purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. QInnerLoading will add an opaque overlay over the delayed element along with a [Spinner](/vue-components/spinners)."
   },
   {
     "name": "QInput",
-    "related": [
+    "imports": [
       "QField"
     ],
+    "related": [],
     "group": "QInput",
     "api": {
       "type": "component",
@@ -4620,18 +4896,30 @@
         "blur": {
           "desc": "Lose focus on underlying input tag"
         }
+      },
+      "docs": {
+        "page": "input",
+        "route": "vue-components",
+        "apiAnchor": "QInput-API"
       }
     },
     "description": "The QInput component is used to capture text input from the user. It uses `v-model`, similar to a regular input. It has support for errors and validation, and comes in a variety of styles, colors, and types."
   },
   {
     "name": "QItem",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QExpansionItem",
+      "QSlideItem",
+      "QSeparator"
+    ],
     "group": "QList",
     "api": {
       "type": "component",
       "docs": {
-        "page": "list-and-list-items"
+        "page": "list-and-list-items",
+        "route": "vue-components",
+        "apiAnchor": "QItem-API"
       },
       "behavior": {
         "$listeners": {
@@ -4758,12 +5046,19 @@
   },
   {
     "name": "QItemLabel",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QExpansionItem",
+      "QSlideItem",
+      "QSeparator"
+    ],
     "group": "QList",
     "api": {
       "type": "component",
       "docs": {
-        "page": "list-and-list-items"
+        "page": "list-and-list-items",
+        "route": "vue-components",
+        "apiAnchor": "QItemLabel-API"
       },
       "behavior": {
         "$listeners": {
@@ -4810,12 +5105,19 @@
   },
   {
     "name": "QItemSection",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QExpansionItem",
+      "QSlideItem",
+      "QSeparator"
+    ],
     "group": "QList",
     "api": {
       "type": "component",
       "docs": {
-        "page": "list-and-list-items"
+        "page": "list-and-list-items",
+        "route": "vue-components",
+        "apiAnchor": "QItemSection-API"
       },
       "behavior": {
         "$listeners": {
@@ -4859,9 +5161,12 @@
   },
   {
     "name": "QKnob",
-    "related": [
+    "imports": [
       "QCircularProgress",
       "TouchPan"
+    ],
+    "related": [
+      "QCircularProgress"
     ],
     "group": "QKnob",
     "api": {
@@ -5039,22 +5344,39 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "knob",
+        "route": "vue-components",
+        "apiAnchor": "QKnob-API"
       }
     },
     "description": "The QKnob component is used to take a number input from the user through mouse/touch panning. It is based on [QCircularProgress](/vue-components/circular-progress) and inherits all its properties and behavior."
   },
   {
     "name": "QLayout",
-    "related": [
+    "imports": [
       "QScrollObserver",
       "QResizeObserver"
+    ],
+    "related": [
+      "QFooter",
+      "QHeader",
+      "QDrawer",
+      "QPage",
+      "QPageContainer",
+      "QPageSticky",
+      "QPageScroller",
+      "QFab",
+      "QFabAction"
     ],
     "group": "QLayout",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "layout"
+        "page": "layout",
+        "apiAnchor": "QLayout-API"
       },
       "props": {
         "view": {
@@ -5158,7 +5480,11 @@
   },
   {
     "name": "QMenu",
-    "related": [],
+    "imports": [],
+    "related": [
+      "ClosePopup",
+      "QPopupProxy"
+    ],
     "group": "QMenu",
     "api": {
       "type": "component",
@@ -5448,16 +5774,27 @@
         "updatePosition": {
           "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it"
         }
+      },
+      "docs": {
+        "page": "menu",
+        "route": "vue-components",
+        "apiAnchor": "QMenu-API"
       }
     },
     "description": "The QMenu component is a convenient way to show menus. Goes very well with [QList](/vue-components/list-and-list-items) as dropdown content, but it's by no means limited to it."
   },
   {
     "name": "QOptionGroup",
-    "related": [
+    "imports": [
       "QRadio",
       "QCheckbox",
       "QToggle"
+    ],
+    "related": [
+      "QRadio",
+      "QCheckbox",
+      "QToggle",
+      "QBtnToggle"
     ],
     "group": "QOptionGroup",
     "api": {
@@ -5544,21 +5881,32 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "option-group",
+        "route": "vue-components",
+        "apiAnchor": "QOptionGroup-API"
       }
     },
     "description": "The QOptionGroup component is a helper component that allows you better control for grouping binary (on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good use for this component is for offering a set of options or settings to turn on and off."
   },
   {
     "name": "QPageScroller",
-    "related": [
+    "imports": [
       "QPageSticky"
+    ],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer"
     ],
     "group": "QPageScroller",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "page-scroller"
+        "page": "page-scroller",
+        "apiAnchor": "QPageSticky-API"
       },
       "behavior": {
         "$listeners": {
@@ -5632,13 +5980,19 @@
   },
   {
     "name": "QPageSticky",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QLayout",
+      "QPage",
+      "QPageContainer"
+    ],
     "group": "QLayout",
     "api": {
       "type": "component",
       "docs": {
         "route": "layout",
-        "page": "page-sticky"
+        "page": "page-sticky",
+        "apiAnchor": "QPageSticky-API"
       },
       "props": {
         "position": {
@@ -5685,10 +6039,11 @@
   },
   {
     "name": "QPagination",
-    "related": [
+    "imports": [
       "QBtn",
       "QInput"
     ],
+    "related": [],
     "group": "QPagination",
     "api": {
       "type": "component",
@@ -5830,15 +6185,24 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "pagination",
+        "route": "vue-components",
+        "apiAnchor": "QPagination-API"
       }
     },
     "description": "The QPagination component is available for whenever a pagination system is required. It offers the user a simple UI for moving between items or pages.\nThere are two modes in which QPagination operates: with buttons only or with an inputbox. The latter allows the user to go to a specific page by clicking/tapping on the inputbox, typing the page number then hitting Enter key. If the new page number is within valid limits, the model will be changed accordingly."
   },
   {
     "name": "QPopupEdit",
-    "related": [
+    "imports": [
       "QMenu",
       "QBtn"
+    ],
+    "related": [
+      "QInput",
+      "QMenu"
     ],
     "group": "QPopupEdit",
     "api": {
@@ -6003,15 +6367,25 @@
         "cancel": {
           "desc": "Triggers a model reset to its initial value ('cancel' event is emitted) then closes Popup"
         }
+      },
+      "docs": {
+        "page": "popup-edit",
+        "route": "vue-components",
+        "apiAnchor": "QPopupEdit-API"
       }
     },
     "description": "The QPopupEdit component can be used to edit a value “in place”, like for example a cell in QTable. By default, a cell is displayed as a String, then if you are using QPopupEdit and a user clicks/taps on the table cell, a popup will open where the user will be able to edit the value using a textfield.\nThis component injects a [QMenu](/vue-components/menu) into its parent DOM element and enables the behavior described above, so **it can be used anywhere**, not only in QTable."
   },
   {
     "name": "QPopupProxy",
-    "related": [
+    "imports": [
       "QDialog",
       "QMenu"
+    ],
+    "related": [
+      "QMenu",
+      "QDialog",
+      "ClosePopup"
     ],
     "group": "QPopupProxy",
     "api": {
@@ -6147,16 +6521,25 @@
           },
           "desc": "Triggers component to toggle between show/hide"
         }
+      },
+      "docs": {
+        "page": "popup-proxy",
+        "route": "vue-components",
+        "apiAnchor": "QPopupProxy-API"
       }
     },
     "description": "QPopupProxy should be used when you need either a [QMenu](/vue-components/menu) (on bigger screens) or a [QDialog](/vue-components/dialog) (on smaller screens) to be displayed. It acts as a proxy which picks between what of the two components to use. QPopupProxy also handles context-menus."
   },
   {
     "name": "QPullToRefresh",
-    "related": [
+    "imports": [
       "QIcon",
       "QSpinner",
       "TouchPan"
+    ],
+    "related": [
+      "QInfiniteScroll",
+      "QIcon"
     ],
     "group": "QPullToRefresh",
     "api": {
@@ -6218,13 +6601,24 @@
         "updateScrollTarget": {
           "desc": "Updates the scroll target; Useful when the parent elements change so that the scrolling target also changes"
         }
+      },
+      "docs": {
+        "page": "pull-to-refresh",
+        "route": "vue-components",
+        "apiAnchor": "QPullToRefresh-API"
       }
     },
     "description": "The QPullToRefresh is a component that allows the user to pull down in order to refresh page content (or retrieve the newest content)."
   },
   {
     "name": "QRadio",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QOptionGroup",
+      "QBtnToggle",
+      "QCheckbox",
+      "QToggle"
+    ],
     "group": "QRadio",
     "api": {
       "type": "component",
@@ -6330,15 +6724,21 @@
         "set": {
           "desc": "Sets the Radio's v-model to equal the val"
         }
+      },
+      "docs": {
+        "page": "radio",
+        "route": "vue-components",
+        "apiAnchor": "QRadio-API"
       }
     },
     "description": "The QRadio component is another basic element for user input. You can use this to supply a way for the user to pick an option from multiple choices."
   },
   {
     "name": "QRating",
-    "related": [
+    "imports": [
       "QIcon"
     ],
+    "related": [],
     "group": "QRating",
     "api": {
       "type": "component",
@@ -6425,13 +6825,21 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "rating",
+        "route": "vue-components",
+        "apiAnchor": "QRating-API"
       }
     },
     "description": "Quasar Rating is a Component which allows users to rate items, usually known as “Star Rating”."
   },
   {
     "name": "QResizeObserver",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QScrollObserver"
+    ],
     "group": "QObserver",
     "api": {
       "type": "component",
@@ -6487,20 +6895,34 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "resize-observer",
+        "route": "vue-components",
+        "apiAnchor": "QResizeObserver-API"
       }
     },
     "description": "QResizeObserver is a Quasar component that emits a `resize` event whenever the wrapping DOM element / component (defined as direct parent of QResizeObserver) changes its size (width and/or height). Note that no polling is involved, but overusing it is costly too."
   },
   {
     "name": "QRouteTab",
-    "related": [
+    "imports": [
       "QTab"
+    ],
+    "related": [
+      "QTabPanel",
+      "QTabPanels",
+      "QBtnToggle",
+      "QIcon",
+      "QBadge"
     ],
     "group": "QTabs",
     "api": {
       "type": "component",
       "docs": {
-        "page": "tabs"
+        "page": "tabs",
+        "route": "vue-components",
+        "apiAnchor": "QRouteTab-API"
       },
       "behavior": {
         "$listeners": {
@@ -6645,10 +7067,13 @@
   },
   {
     "name": "QScrollArea",
-    "related": [
+    "imports": [
       "QResizeObserver",
       "QScrollObserver",
       "TouchPan"
+    ],
+    "related": [
+      "QDrawer"
     ],
     "group": "QScrollArea",
     "api": {
@@ -6723,13 +7148,21 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "scroll-area",
+        "route": "vue-components",
+        "apiAnchor": "QScrollArea-API"
       }
     },
     "description": "The QScrollArea component offers a neat way of customizing the scrollbars by encapsulating your content. Think of it as a DOM element which has `overflow: auto`, but with your own custom styled scrollbar instead of browser's default one and a few nice features on top.\nThis is especially useful for desktop as scrollbars are hidden on a mobile device. When on a mobile device, QScrollArea simply wraps the content in a `<div>` configured for default browser scrolling."
   },
   {
     "name": "QScrollObserver",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QResizeObserver"
+    ],
     "group": "QObserver",
     "api": {
       "type": "component",
@@ -6804,13 +7237,18 @@
         "getPosition": {
           "desc": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflexionPosition }"
         }
+      },
+      "docs": {
+        "page": "scroll-observer",
+        "route": "vue-components",
+        "apiAnchor": "QScrollObserver-API"
       }
     },
     "description": "QScrollObserver is a Quasar component that emits a `scroll` event whenever the user scrolls the page or overflowed container with `.scroll` CSS class applied to it."
   },
   {
     "name": "QSelect",
-    "related": [
+    "imports": [
       "QField",
       "QIcon",
       "QChip",
@@ -6820,6 +7258,7 @@
       "QMenu",
       "QDialog"
     ],
+    "related": [],
     "group": "QSelect",
     "api": {
       "type": "component",
@@ -7618,18 +8057,26 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "select",
+        "route": "vue-components",
+        "apiAnchor": "QSelect-API"
       }
     },
     "description": "The QSelect component has two types of selection: single or multiple. This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.\nIn case you are looking for a dropdown \"button\" instead of \"input\" use [Button Dropdown](/vue-components/button-dropdown) instead."
   },
   {
     "name": "QSeparator",
+    "imports": [],
     "related": [],
     "group": "QSeparator",
     "api": {
       "type": "component",
       "docs": {
-        "apiAnchor": "API"
+        "apiAnchor": "API",
+        "page": "separator",
+        "route": "vue-components"
       },
       "props": {
         "dark": {
@@ -7674,8 +8121,15 @@
   },
   {
     "name": "QSlideItem",
-    "related": [
+    "imports": [
       "TouchPan"
+    ],
+    "related": [
+      "QItem",
+      "QItemLabel",
+      "QItemSection",
+      "QList",
+      "QExpansionItem"
     ],
     "group": "QList",
     "api": {
@@ -7771,13 +8225,61 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "slide-item",
+        "route": "vue-components",
+        "apiAnchor": "QSlideItem-API"
       }
     },
     "description": "The QSlideItem component is essentially a [QItem](/vue-components/list-and-list-items) with two additional slots (`left` and `right`) which allows user to drag the item (through mouse or with the finger on a touch device) to one of the sides in order to apply a specific action."
   },
   {
+    "name": "QSlideTransition",
+    "imports": [],
+    "related": [
+      "QExpansionItem"
+    ],
+    "group": "QSlideTransition",
+    "api": {
+      "type": "component",
+      "props": {
+        "appear": {
+          "type": "Boolean",
+          "desc": "If set to true, the transition will be applied on the initial render.",
+          "category": "behavior"
+        },
+        "duration": {
+          "type": "Number",
+          "desc": "Duration (in milliseconds) enabling animated scroll.",
+          "default": 300,
+          "examples": [
+            500,
+            ":duration=\"500\""
+          ],
+          "category": "behavior"
+        }
+      },
+      "slots": {
+        "default": {
+          "desc": "This is where content goes"
+        }
+      },
+      "docs": {
+        "page": "slide-transition",
+        "route": "vue-components",
+        "apiAnchor": "QSlideTransition-API"
+      }
+    },
+    "description": "QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside `v-show` and `v-if` on a single element, similar to Vue's Transition component with the only difference being that it's not a group transition too (it only applies to one DOM element or component)."
+  },
+  {
     "name": "QSlider",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QRange",
+      "QField"
+    ],
     "group": "QSlider",
     "api": {
       "type": "component",
@@ -7920,49 +8422,32 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "slider",
+        "route": "vue-components",
+        "apiAnchor": "QSlider-API"
       }
     },
     "description": "The QSlider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values. The slider also has a focus indicator (highlighted slider button), which allows for keyboard adjustments of the slider.\nAlso check its “sibling”, the [QRange](/vue-components/range) component."
   },
   {
-    "name": "QSlideTransition",
-    "related": [],
-    "group": "QSlideTransition",
-    "api": {
-      "type": "component",
-      "props": {
-        "appear": {
-          "type": "Boolean",
-          "desc": "If set to true, the transition will be applied on the initial render.",
-          "category": "behavior"
-        },
-        "duration": {
-          "type": "Number",
-          "desc": "Duration (in milliseconds) enabling animated scroll.",
-          "default": 300,
-          "examples": [
-            500,
-            ":duration=\"500\""
-          ],
-          "category": "behavior"
-        }
-      },
-      "slots": {
-        "default": {
-          "desc": "This is where content goes"
-        }
-      }
-    },
-    "description": "QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside `v-show` and `v-if` on a single element, similar to Vue's Transition component with the only difference being that it's not a group transition too (it only applies to one DOM element or component)."
-  },
-  {
     "name": "QSpinner",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QLinearProgress",
+      "QCircularProgress",
+      "QInnerLoading",
+      "Loading",
+      "LoadingBar"
+    ],
     "group": "QSpinner",
     "api": {
       "type": "component",
       "docs": {
-        "page": "spinners"
+        "page": "spinners",
+        "route": "vue-components",
+        "apiAnchor": "QSpinner-API"
       },
       "behavior": {
         "$listeners": {
@@ -8004,14 +8489,21 @@
   },
   {
     "name": "QSplitter",
-    "related": [
+    "imports": [
       "TouchPan"
+    ],
+    "related": [
+      "QExpansionItem",
+      "QSlideItem",
+      "QSeparator"
     ],
     "group": "QSplitter",
     "api": {
       "type": "component",
       "docs": {
-        "apiAnchor": "API"
+        "apiAnchor": "API",
+        "page": "splitter",
+        "route": "vue-components"
       },
       "behavior": {
         "$listeners": {
@@ -8137,14 +8629,17 @@
   },
   {
     "name": "QStep",
-    "related": [
+    "imports": [
       "QSlideTransition"
     ],
+    "related": [],
     "group": "QStepper",
     "api": {
       "type": "component",
       "docs": {
-        "page": "stepper"
+        "page": "stepper",
+        "route": "vue-components",
+        "apiAnchor": "QStep-API"
       },
       "behavior": {
         "$listeners": {
@@ -8294,14 +8789,23 @@
   },
   {
     "name": "QTab",
-    "related": [
+    "imports": [
       "QIcon"
+    ],
+    "related": [
+      "QTabPanel",
+      "QTabPanels",
+      "QBtnToggle",
+      "QIcon",
+      "QBadge"
     ],
     "group": "QTabs",
     "api": {
       "type": "component",
       "docs": {
-        "page": "tabs"
+        "page": "tabs",
+        "route": "vue-components",
+        "apiAnchor": "QTab-API"
       },
       "behavior": {
         "$listeners": {
@@ -8402,12 +8906,19 @@
   },
   {
     "name": "QTabPanel",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QRouteTab",
+      "QTab",
+      "QTabs"
+    ],
     "group": "QTabPanels",
     "api": {
       "type": "component",
       "docs": {
-        "page": "tab-panels"
+        "page": "tab-panels",
+        "route": "vue-components",
+        "apiAnchor": "QTabPanel-API"
       },
       "behavior": {
         "$listeners": {
@@ -8442,7 +8953,12 @@
   },
   {
     "name": "QTabPanels",
-    "related": [],
+    "imports": [],
+    "related": [
+      "QRouteTab",
+      "QTab",
+      "QTabs"
+    ],
     "group": "QTabPanels",
     "api": {
       "type": "component",
@@ -8591,15 +9107,27 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "tab-panels",
+        "route": "vue-components",
+        "apiAnchor": "QTabPanels-API"
       }
     },
     "description": "Tab panels are a way of displaying more information using less window real estate."
   },
   {
     "name": "QTabs",
-    "related": [
+    "imports": [
       "QIcon",
       "QResizeObserver"
+    ],
+    "related": [
+      "QTabPanel",
+      "QTabPanels",
+      "QBtnToggle",
+      "QIcon",
+      "QBadge"
     ],
     "group": "QTabs",
     "api": {
@@ -8743,20 +9271,31 @@
             }
           }
         }
+      },
+      "docs": {
+        "page": "tabs",
+        "route": "vue-components",
+        "apiAnchor": "QTabs-API"
       }
     },
     "description": "Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to [Layouts](/layout/layout) and [Header & Footer](/layout/header-and-footer#Example--Playing-with-QTabs) for references."
   },
   {
     "name": "QTh",
-    "related": [
+    "imports": [
       "QIcon"
+    ],
+    "related": [
+      "QMarkupTable",
+      "QPagination"
     ],
     "group": "QTable",
     "api": {
       "type": "component",
       "docs": {
-        "page": "table"
+        "page": "table",
+        "route": "vue-components",
+        "apiAnchor": "QTh-API"
       },
       "props": {
         "props": {
@@ -8783,9 +9322,13 @@
   },
   {
     "name": "QTime",
-    "related": [
+    "imports": [
       "QBtn",
       "TouchPan"
+    ],
+    "related": [
+      "QDate",
+      "QField"
     ],
     "group": "QDatetime",
     "api": {
@@ -8927,20 +9470,28 @@
           },
           "type": "String"
         }
+      },
+      "docs": {
+        "page": "time",
+        "route": "vue-components",
+        "apiAnchor": "QTime-API"
       }
     },
     "description": "The QTime component provides a method to input time."
   },
   {
     "name": "QTimelineEntry",
-    "related": [
+    "imports": [
       "QIcon"
     ],
+    "related": [],
     "group": "QTimeline",
     "api": {
       "type": "component",
       "docs": {
-        "page": "timeline"
+        "page": "timeline",
+        "route": "vue-components",
+        "apiAnchor": "QTimelineEntry-API"
       },
       "behavior": {
         "$listeners": {
@@ -9033,8 +9584,14 @@
   },
   {
     "name": "QToggle",
-    "related": [
+    "imports": [
       "QIcon"
+    ],
+    "related": [
+      "QCheckbox",
+      "QOptionGroup",
+      "QRadio",
+      "QBtnToggle"
     ],
     "group": "QToggle",
     "api": {
@@ -9181,23 +9738,31 @@
         "toggle": {
           "desc": "Toggle the state (of the model)"
         }
+      },
+      "docs": {
+        "page": "toggle",
+        "route": "vue-components",
+        "apiAnchor": "QToggle-API"
       }
     },
     "description": "The QToggle component is another basic element for user input. You can use this for turning settings, features or true/ false inputs on and off."
   },
   {
     "name": "QTree",
-    "related": [
+    "imports": [
       "QIcon",
       "QCheckbox",
       "QSlideTransition",
       "QSpinner"
     ],
+    "related": [],
     "group": "QTree",
     "api": {
       "type": "component",
       "docs": {
-        "apiAnchor": "API"
+        "apiAnchor": "API",
+        "page": "tree",
+        "route": "vue-components"
       },
       "props": {
         "nodes": {
@@ -9729,7 +10294,11 @@
   },
   {
     "name": "TouchPan",
-    "related": [],
+    "imports": [],
+    "related": [
+      "TouchSwipe",
+      "TouchHold"
+    ],
     "api": {
       "type": "directive",
       "value": {
@@ -9900,6 +10469,11 @@
           "type": "Boolean",
           "desc": "Catch vertical movement; If 'horizontal' or 'vertical' are not specified, then both directions are considered by default"
         }
+      },
+      "docs": {
+        "page": "touch-pan",
+        "route": "vue-directives",
+        "apiAnchor": "API"
       }
     },
     "description": "Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe`, `v-touch-hold` and even `v-touch-repeat`.\n> **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.\nWe will be describing `v-touch-pan` on the lines below."
