@@ -67,11 +67,11 @@ svg
   div.column.relative-position.components__root
     div.row
       svg.absolute-center
-      div.quasar__logo.absolute-center(v-show="!showDialog")
+      div.quasar__logo.absolute-center(v-show="!showComponentDetails")
         img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
-      div.circle.absolute-center(v-if="showDialog" ref="circle")
+      div.circle.absolute-center(v-if="showComponentDetails" ref="circle")
         q-card(v-if="focusedComponentIndex !== null" dark flat)
-          q-btn.btn__close(flat round dense icon="close" @click="showDialog = false")
+          q-btn.btn__close(flat round dense icon="close" @click="showComponentDetails = false")
           .row(style="margin-top:-20px")
             .col-2
             q-field.col-8(v-if="!search" dense dark rounded outlined bg-color="grey-10")
@@ -147,7 +147,7 @@ export default {
       chords: [],
       groups: [],
       componentCount: 0,
-      showDialog: false,
+      showComponentDetails: false,
       tab: 'description'
     }
   },
@@ -226,7 +226,7 @@ export default {
         this.mutateFocusedComponentIndex(1)
       }
       else if (e.keyCode === 27) {
-        this.showDialog = false
+        this.showComponentDetails = false
         this.mutateFocusedComponentIndex(null)
       }
       else {
@@ -241,7 +241,7 @@ export default {
     __click (e) {
       const d = e.target.__data__
       if (d) {
-        this.showDialog = true
+        this.showComponentDetails = true
       }
     }
   },
@@ -357,7 +357,7 @@ export default {
         this.hasActiveComponent = hasActiveComponent
       }
       else {
-        this.showDialog = false
+        this.showComponentDetails = false
         for (const chord of this.chords) {
           chord.style.opacity = defaultChordOpacity
         }
