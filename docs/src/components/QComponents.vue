@@ -217,12 +217,6 @@ export default {
 
     __focus (e) {},
 
-    __blur (e) {
-      if (!this.toCircle(e, 'relatedTarget')) {
-        this.focusedComponentIndex = null
-      }
-    },
-
     __keydown (e) {
       let index = this.focusedComponentIndex
       if (e.keyCode === 37 || e.keyCode === 40) { // left/down
@@ -241,16 +235,6 @@ export default {
 
       if (index !== null) {
         e.preventDefault()
-      }
-    },
-
-    __mouseLeave (e) {
-      if (e.toElement === this.$el.parentElement) {
-        this.showDialog = false
-      }
-
-      if (!this.toCircle(e)) {
-        this.focusedComponentIndex = null
       }
     },
 
@@ -333,9 +317,7 @@ export default {
     const svgEl = this.$el.querySelector('svg')
     svgEl.removeEventListener('mousemove', this.__mouseMove)
     svgEl.removeEventListener('focus', this.__focus)
-    svgEl.removeEventListener('blur', this.__blur)
     svgEl.removeEventListener('keydown', this.__keydown)
-    svgEl.removeEventListener('mouseleave', this.__mouseLeave)
     svgEl.removeEventListener('click', this.__click)
   },
 
@@ -344,9 +326,7 @@ export default {
 
     svgEl.addEventListener('mousemove', this.__mouseMove)
     svgEl.addEventListener('focus', this.__focus)
-    svgEl.addEventListener('blur', this.__blur)
     svgEl.addEventListener('keydown', this.__keydown)
-    svgEl.addEventListener('mouseleave', this.__mouseLeave)
     svgEl.addEventListener('click', this.__click)
   },
 
