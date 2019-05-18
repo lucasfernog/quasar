@@ -85,13 +85,13 @@ svg
                 q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
           q-tabs(v-model="tab" dense)
             q-tab(name="description" label="Description")
-            q-tab(name="api" label="API")
             q-tab(name="example" label="Example")
           q-tab-panels(v-model="tab")
             q-tab-panel.text-amber-1.bg-black(name="description") Test description
-            q-tab-panel.text-amber-1.bg-black(name="api") Test API
             q-tab-panel.text-amber-1.bg-black(name="example") Test example
           q-btn.btn__docs(flat label="full documentation")
+
+      doc-api.absolute-bottom(v-if="showComponentDetails" :file="filteredComponents[focusedComponentIndex].name" style="top: 700px")
 
 </template>
 

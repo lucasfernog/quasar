@@ -119,11 +119,27 @@ export default {
         props: null
       },
       filter: '',
-      filteredApi: {}
+      filteredApi: {},
+      parsedJson: {}
     }
   },
 
   watch: {
+    file (val) {
+      if (this.parsedJson[val]) {
+        this.parseJson(val, this.parsedJson[val])
+      }
+      else {
+        import(
+          /* webpackChunkName: "quasar-api" */
+          /* webpackMode: "lazy-once" */
+          `quasar/dist/api/${val}.json`
+        ).then(json => {
+          this.parseJson(val, json.default)
+        })
+      }
+    },
+
     filter (val) {
       val = val.trim().toLowerCase()
 
@@ -188,6 +204,7 @@ export default {
 
   methods: {
     parseJson (name, { type, behavior, ...api }) {
+      this.parsedJson[name] = { type, behavior, ...api }
       this.aggregationModel = {}
 
       if (type === 'component') {
