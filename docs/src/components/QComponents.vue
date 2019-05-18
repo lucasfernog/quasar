@@ -46,6 +46,9 @@ Src
       border-radius: 0 0 10px 10px!important
       height: 180px
 
+      .q-scrollarea
+        height: 160px
+
 .quasar__logo, .circle
   width:380px
   height:380px
@@ -87,10 +90,15 @@ svg
                 q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
           q-tabs(v-model="tab" dense)
             q-tab(name="description" label="Description")
-            q-tab(name="example" label="Example")
+            q-tab(name="related" label="Related")
           q-tab-panels(v-model="tab")
             q-tab-panel.text-amber-1.bg-black(name="description") Test description
-            q-tab-panel.text-amber-1.bg-black(name="example") Test example
+            q-tab-panel.text-amber-1.bg-black.q-px-none(name="related")
+              q-list(dense dark)
+                q-scroll-area(:thumb-style="thumbStyle")
+                  q-item(@click="onRelatedClick(related)" clickable v-ripple v-for="related in filteredComponents[focusedComponentIndex].related" :key="related")
+                    q-item-section {{ related }}
+
           q-btn.btn__docs(flat label="full documentation")
 
       doc-api.absolute-bottom(v-if="showComponentDetails" :file="filteredComponents[focusedComponentIndex].name" style="top: 700px")
@@ -160,6 +168,10 @@ export default {
   },
 
   methods: {
+    onRelatedClick (related) {
+      this.focusedComponentIndex = this.indexByName['$' + related]
+    },
+
     // Returns the Flare package name for the given class name.
     name: name => name,
 
@@ -254,6 +266,16 @@ export default {
   },
 
   computed: {
+    thumbStyle () {
+      return {
+        right: '2px',
+        borderRadius: '5px',
+        backgroundColor: this.fill(this.focusedComponentIndex),
+        width: '5px',
+        opacity: 0.75
+      }
+    },
+
     filteredComponents () {
       if (this.filter) {
         let filter = this.filter.toLowerCase(),
@@ -383,6 +405,7 @@ export default {
       const outerRadius = 700 / 2,
         innerRadius = outerRadius - 150,
         fill = this.$d3.scaleOrdinal().range(['#1b70fc', '#faff16', '#d50527', '#158940', '#f898fd', '#24c9d7', '#cb9b64', '#866888', '#22e67a', '#e509ae', '#9dabfa', '#437e8a', '#b21bff', '#ff7b91', '#94aa05', '#ac5906', '#82a68d', '#fe6616', '#7a7352', '#f9bc0f', '#b65d66', '#07a2e6', '#c091ae', '#8674d2', '#8a91a7', '#88fc07', '#ea42fe', '#9e8010', '#10b437', '#c281fe', '#f92b75', '#07c99d', '#a946aa', '#bfd544', '#16977e', '#ff6ac8', '#a88178', '#5776a9', '#678007', '#fa9316', '#85c070', '#6aa2a9', '#989e5d', '#fe9169', '#cd714a', '#6ed014', '#c5639c', '#c23271', '#698ffc', '#678275', '#c5a121', '#a978ba', '#ee534e', '#d24506', '#59c3fa', '#ca7b0a', '#6f7385', '#9a634a', '#48aa6f', '#ad9ad0', '#d7908c', '#6a8a53', '#8c46fc', '#8f5ab8', '#fd1105', '#7ea7cf', '#d77cd1', '#a9804b', '#0688b4', '#6a9f3e', '#ee8fba', '#a67389', '#9e8cfe', '#bd443c', '#6d63ff', '#d110d5', '#798cc3', '#df5f83', '#b1b853', '#bb59d8', '#1d960c', '#867ba8', '#18acc9', '#25b3a7', '#f3db1d', '#938c6d', '#936a24', '#a964fb', '#92e460', '#a05787', '#9c87a0', '#20c773', '#8b696d', '#78762d', '#638ba8', '#e154c6', '#40835f', '#d73656', '#1afd5c', '#c4f546', '#3d88d8', '#bd3896', '#1397a3', '#f940a5', '#66aeff', '#d097e7', '#fe6ef9', '#d86507', '#8b900a', '#d47270', '#e8ac48', '#cf7c97', '#cebb11', '#718a90', '#e78139', '#ff7463', '#bea1fd', '#f81d47', '#72b93c', '#7ba66a', '#656dc4', '#3a8278', '#66988b', '#a384d5', '#b35a3b', '#e07cfd', '#27cf4c', '#b224d4', '#b39579', '#b68f38', '#e51188', '#938747', '#5eb195', '#bba85b', '#f39f5a', '#9961a0', '#bd60b6', '#14a147', '#db8c67', '#9bc52e', '#96a0cd', '#7b68ac', '#039762', '#cf15fd', '#d1583d', '#b77163'])
+      this.fill = fill
       const chord = this.$d3.chord()
         .padAngle(0.04)
         .sortSubgroups(this.$d3.descending)
