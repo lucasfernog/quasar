@@ -51,11 +51,13 @@ Src
   height:380px
 
 .components__root
-  background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
   min-width:100%
   width:100%
   margin-top:300px
   height:750px
+
+  &--dark
+    background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
 
 svg
   width: 500
@@ -64,7 +66,7 @@ svg
 </style>
 
 <template lang="pug">
-  div.column.relative-position.components__root
+  div.column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
     div.row
       svg.absolute-center
       div.quasar__logo.absolute-center(v-show="!showComponentDetails")
@@ -156,7 +158,8 @@ export default {
     interactive: {
       type: Boolean,
       default: false
-    }
+    },
+    dark: Boolean
   },
 
   methods: {
@@ -441,8 +444,11 @@ export default {
           // console.log(index, percentage)
           colorProcessingPercentages[index] = percentage
           let color = fill(index)
+          if (this.dark) {
+            color = saturate(color, percentage)
+          }
           // return
-          return lighten(saturate(color, percentage), percentage)
+          return lighten(color, percentage)
         })
         .attr('d', this.$d3.ribbon().radius(innerRadius))
 
