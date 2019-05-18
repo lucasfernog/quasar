@@ -24,8 +24,6 @@ Src
   border-color black
 
   .q-card
-    height: 200px
-    width: 310px
     margin: 22px 36px 22px 33px
     background: transparent
 
@@ -46,10 +44,6 @@ Src
       border-radius: 0 0 10px 10px!important
       height: 180px
 
-.quasar__logo, .circle
-  width:380px
-  height:380px
-
 .components__root
   min-width:100%
   width:100%
@@ -60,19 +54,17 @@ Src
     background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
 
 svg
-  width: 500
-  height: 300
   z-index: 1 /* above logo to catch mousemove */
 </style>
 
 <template lang="pug">
   div.column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
     div.row
-      svg.absolute-center
-      div.quasar__logo.absolute-center(v-show="!showComponentDetails")
+      svg.absolute-center(:width="width" :height="height")
+      div.quasar__logo.absolute-center(v-show="!showComponentDetails" :style="dimensions")
         img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
-      div.circle.absolute-center(v-if="showComponentDetails" ref="circle")
-        q-card(v-if="focusedComponentIndex !== null" dark flat)
+      div.circle.absolute-center(v-if="showComponentDetails" ref="circle" :style="dimensions")
+        q-card(v-if="focusedComponentIndex !== null" dark flat :style="cardDimensions")
           q-btn.btn__close(flat round dense icon="close" @click="showComponentDetails = false")
           .row(style="margin-top:-20px")
             .col-2
@@ -93,7 +85,11 @@ svg
             q-tab-panel.text-amber-1.bg-black(name="example") Test example
           q-btn.btn__docs(flat label="full documentation")
 
-      doc-api.absolute-bottom(v-if="showComponentDetails" :file="filteredComponents[focusedComponentIndex].name" style="top: 700px")
+      doc-api.absolute-bottom(
+        v-if="showComponentDetails"
+        :file="filteredComponents[focusedComponentIndex].name"
+        :style="{top: Math.min(685, this.height * 1.1) + 'px'}"
+      )
 
 </template>
 
@@ -155,11 +151,17 @@ export default {
   },
 
   props: {
-    interactive: {
-      type: Boolean,
-      default: false
+    interactive: Boolean,
+    dark: Boolean,
+    width: {
+      type: Number,
+      default: 300
     },
-    dark: Boolean
+
+    height: {
+      type: Number,
+      default: 500
+    }
   },
 
   methods: {
@@ -257,6 +259,22 @@ export default {
   },
 
   computed: {
+    dimensions () {
+      let val = Math.min(this.height, this.width)
+      return {
+        width: val * 0.757 - 150 + 'px',
+        height: val * 0.757 - 150 + 'px'
+      }
+    },
+
+    cardDimensions () {
+      let val = Math.min(this.height, this.width)
+      return {
+        height: val * 0.314 + 'px',
+        width: val * 0.443 + 'px'
+      }
+    },
+
     filteredComponents () {
       if (this.filter) {
         let filter = this.filter.toLowerCase(),
@@ -383,7 +401,7 @@ export default {
       let child
       (child = this.$el.querySelector('svg').children[0]) && child.remove()
 
-      const outerRadius = 700 / 2,
+      const outerRadius = Math.min(this.height, this.width) / 2,
         innerRadius = outerRadius - 150,
         fill = this.$d3.scaleOrdinal().range(['#1b70fc', '#faff16', '#d50527', '#158940', '#f898fd', '#24c9d7', '#cb9b64', '#866888', '#22e67a', '#e509ae', '#9dabfa', '#437e8a', '#b21bff', '#ff7b91', '#94aa05', '#ac5906', '#82a68d', '#fe6616', '#7a7352', '#f9bc0f', '#b65d66', '#07a2e6', '#c091ae', '#8674d2', '#8a91a7', '#88fc07', '#ea42fe', '#9e8010', '#10b437', '#c281fe', '#f92b75', '#07c99d', '#a946aa', '#bfd544', '#16977e', '#ff6ac8', '#a88178', '#5776a9', '#678007', '#fa9316', '#85c070', '#6aa2a9', '#989e5d', '#fe9169', '#cd714a', '#6ed014', '#c5639c', '#c23271', '#698ffc', '#678275', '#c5a121', '#a978ba', '#ee534e', '#d24506', '#59c3fa', '#ca7b0a', '#6f7385', '#9a634a', '#48aa6f', '#ad9ad0', '#d7908c', '#6a8a53', '#8c46fc', '#8f5ab8', '#fd1105', '#7ea7cf', '#d77cd1', '#a9804b', '#0688b4', '#6a9f3e', '#ee8fba', '#a67389', '#9e8cfe', '#bd443c', '#6d63ff', '#d110d5', '#798cc3', '#df5f83', '#b1b853', '#bb59d8', '#1d960c', '#867ba8', '#18acc9', '#25b3a7', '#f3db1d', '#938c6d', '#936a24', '#a964fb', '#92e460', '#a05787', '#9c87a0', '#20c773', '#8b696d', '#78762d', '#638ba8', '#e154c6', '#40835f', '#d73656', '#1afd5c', '#c4f546', '#3d88d8', '#bd3896', '#1397a3', '#f940a5', '#66aeff', '#d097e7', '#fe6ef9', '#d86507', '#8b900a', '#d47270', '#e8ac48', '#cf7c97', '#cebb11', '#718a90', '#e78139', '#ff7463', '#bea1fd', '#f81d47', '#72b93c', '#7ba66a', '#656dc4', '#3a8278', '#66988b', '#a384d5', '#b35a3b', '#e07cfd', '#27cf4c', '#b224d4', '#b39579', '#b68f38', '#e51188', '#938747', '#5eb195', '#bba85b', '#f39f5a', '#9961a0', '#bd60b6', '#14a147', '#db8c67', '#9bc52e', '#96a0cd', '#7b68ac', '#039762', '#cf15fd', '#d1583d', '#b77163'])
       const chord = this.$d3.chord()

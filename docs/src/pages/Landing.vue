@@ -25,7 +25,7 @@
       .landing__arrow.text-center
         q-icon(name="expand_more").text-h2.text-white
 
-      q-components(dark interactive)
+      q-components(dark interactive :width="900" :height="900")
 
   section.padding.landing__front.text-center
     div
