@@ -324,16 +324,16 @@ export default {
     filteredComponents () {
       if (this.filter) {
         let filter = this.filter.toLowerCase(),
-          include = []
+          links = []
 
         this.components.forEach(c => {
-          if (c.name.toLowerCase().includes(filter) || c.group.toLowerCase().includes(filter)) {
-            include = include.concat(c.imports)
-            include.push(c.name)
+          if (c.name.toLowerCase().includes(filter) || (c.group && c.group.toLowerCase().includes(filter))) {
+            links = links.concat(c.imports).concat(c.related)
+            links.push(c.name)
           }
         })
 
-        return this.components.filter(c => include.includes(c.name))
+        return this.components.filter(c => links.includes(c.name))
       }
       return this.components
     },
@@ -374,7 +374,7 @@ export default {
           for (var i = -1; ++i < n;) row[i] = 0
         }
 
-        d.imports.forEach(d => {
+        (d.imports.length ? d.imports : d.related).forEach(d => {
           row[this.indexByName.get(this.name(d))]++
         })
       })
