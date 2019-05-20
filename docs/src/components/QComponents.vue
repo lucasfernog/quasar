@@ -11,40 +11,41 @@ Src
   opacity: 0.09
 
 .circle
-  font-size:20px
-  color:#fff
-  text-align:center
-  line-height:0
-  border-radius:50%
-  background:#111
-  opacity: 0.95
-  z-index: 2; /* above svg */
+  font-size 20px
+  color #fff
+  text-align center
+  line-height 0
+  border-radius 50%
+  background #eee
+  opacity 0.8
+  z-index 2 /* above svg */
   border-width 2px
   border-style solid
-  border-color black
-
+  border-color white
+  &--dark
+    background #111
+    border-color black
   .q-card
-    height: 200px
-    width: 310px
-    margin: 22px 36px 22px 33px
-    background: transparent
+    margin 5%
+    background transparent
 
     .btn__close
-      position: relative
-      top:-20px
+      margin-top 65%
+      color black
 
     .btn__docs
-      margin-top: 12px
+      margin-top 20%
+      color black
 
     .q-tabs
-      padding-top:3px
+      padding-top 3px
 
     .q-tab
-      border-radius: 20px 20px 0 0
+      border-radius 20px 20px 0 0
 
     .q-tab-panels
-      border-radius: 0 0 10px 10px!important
-      height: 180px
+      border-radius 0 0 10px 10px!important
+      height 80%
 
       .q-scrollarea
         height: 160px
@@ -56,60 +57,57 @@ Src
         margin-bottom 0
         text-align left
 
-.quasar__logo, .circle
-  width:380px
-  height:380px
-
 .components__root
-  min-width:100%
-  width:100%
-  margin-top:300px
-  height:750px
+  min-width 100%
+  width 100%
+  height 750px
 
   &--dark
     background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
 
 svg
-  width: 500
-  height: 300
   z-index: 1 /* above logo to catch mousemove */
 </style>
 
 <template lang="pug">
-  div.column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
-    div.row
-      svg.absolute-center
-      div.quasar__logo.absolute-center(v-show="!showComponentDetails")
+  .column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
+    .row
+      svg.absolute-center(:width="width" :height="height")
+      .quasar__logo.absolute-center(v-show="!showComponentDetails" :style="dimensions")
         img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
-      div.circle.absolute-center(v-if="showComponentDetails" ref="circle")
-        q-card(v-if="focusedComponentIndex !== null" dark flat)
-          q-btn.btn__close(flat round dense icon="close" @click="showComponentDetails = false")
-          .row(style="margin-top:-20px")
-            .col-2
-            q-field.col-8(v-if="!search" dense dark rounded outlined bg-color="grey-10")
+      .circle.absolute-center(v-if="showComponentDetails" ref="circle" :style="dimensions")
+        q-card(v-if="focusedComponentIndex !== null" flat :style="cardDimensions")
+          .row(style="margin-top:-10px")
+            .col-1
+            q-field.col-10.absolute-center(v-if="!search" dense rounded outlined bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="search" @click="search = true" style="margin-right:-8px")
               template(v-slot:control)
-                div.self-center.full-width.no-outline(@click="search = true" style="font-weight:800;font-size:1.2em")
+                div.self-center.full-width.no-outline.text-center(@click="search = true" style="font-weight:800;font-size:1.2em;margin-left:8px")
                   span {{ filteredComponents[focusedComponentIndex].name }}
-            q-input.col-8(v-else v-model="filter" rounded outlined dense dark bg-color="grey-10" placeholder="Search Components" debounce="500" ref="search")
+            q-input.col-10.absolute-center(v-else v-model="filter" rounded outlined dense placeholder="Search" debounce="500" ref="search" bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
-          q-tabs(v-model="tab" dense)
+          // q-tabs(v-model="tab" dense)
             q-tab(name="description" label="Description")
-            q-tab(name="related" label="Related")
-          q-tab-panels(v-model="tab")
+            q-tab(name="example" label="Example")
+          // q-tab-panels(v-model="tab")
             q-tab-panel.text-amber-1.bg-black(name="description" v-html="filteredComponents[focusedComponentIndex].description")
-            q-tab-panel.text-amber-1.bg-black.q-px-none(name="related")
+            q-tab-panel.text-amber-1.bg-black(name="related")
               q-list(dense dark)
                 q-scroll-area(:thumb-style="thumbStyle")
                   q-item(@click="onRelatedClick(related)" clickable v-ripple v-for="related in focusedComponentRelated" :key="related")
                     q-item-section {{ related }}
+          .row.absolute-center.btn__docs
+            q-btn(flat label="docs" :to="route(filteredComponents[focusedComponentIndex].name)")
+            q-btn(flat label="api")
+          q-btn.btn__close.absolute-center(flat round dense icon="close" @click="showComponentDetails = false")
 
-          q-btn.btn__docs(flat label="full documentation")
-
-      doc-api.absolute-bottom(v-if="showComponentDetails" :file="filteredComponents[focusedComponentIndex].name" style="top: 700px")
-
+      doc-api.relative-bottom.full-width(
+        v-if="showComponentDetails"
+        :file="filteredComponents[focusedComponentIndex].name"
+        :style="{top: Math.min(685, this.height * 1.1) + 'px', 'z-index': 1}"
+      )
 </template>
 
 <script>
@@ -171,7 +169,20 @@ export default {
 
   props: {
     interactive: Boolean,
-    dark: Boolean
+    dark: Boolean,
+    width: {
+      type: Number,
+      default: 600
+    },
+
+    height: {
+      type: Number,
+      default: 600
+    },
+    active: {
+      type: String,
+      default: null
+    }
   },
 
   methods: {
@@ -226,6 +237,10 @@ export default {
       })
     },
 
+    route (component) {
+      return `/vue-components/${component.split('Q')[1].replace(/\W+/g, '-').replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase()}`
+    },
+
     __mouseMove (e) {
       const d = e.target.__data__
       if (d) {
@@ -273,6 +288,22 @@ export default {
   },
 
   computed: {
+    dimensions () {
+      let val = Math.min(this.height, this.width)
+      return {
+        width: val * 0.757 - 150 + 'px',
+        height: val * 0.757 - 150 + 'px'
+      }
+    },
+
+    cardDimensions () {
+      let val = Math.min(this.height, this.width)
+      return {
+        height: val * 0.314 + 'px',
+        width: val * 0.443 + 'px'
+      }
+    },
+
     thumbStyle () {
       return {
         right: '2px',
@@ -416,7 +447,7 @@ export default {
       let child
       (child = this.$el.querySelector('svg').children[0]) && child.remove()
 
-      const outerRadius = 700 / 2,
+      const outerRadius = Math.min(this.height, this.width) / 2,
         innerRadius = outerRadius - 150,
         fill = this.$d3.scaleOrdinal().range(['#1b70fc', '#faff16', '#d50527', '#158940', '#f898fd', '#24c9d7', '#cb9b64', '#866888', '#22e67a', '#e509ae', '#9dabfa', '#437e8a', '#b21bff', '#ff7b91', '#94aa05', '#ac5906', '#82a68d', '#fe6616', '#7a7352', '#f9bc0f', '#b65d66', '#07a2e6', '#c091ae', '#8674d2', '#8a91a7', '#88fc07', '#ea42fe', '#9e8010', '#10b437', '#c281fe', '#f92b75', '#07c99d', '#a946aa', '#bfd544', '#16977e', '#ff6ac8', '#a88178', '#5776a9', '#678007', '#fa9316', '#85c070', '#6aa2a9', '#989e5d', '#fe9169', '#cd714a', '#6ed014', '#c5639c', '#c23271', '#698ffc', '#678275', '#c5a121', '#a978ba', '#ee534e', '#d24506', '#59c3fa', '#ca7b0a', '#6f7385', '#9a634a', '#48aa6f', '#ad9ad0', '#d7908c', '#6a8a53', '#8c46fc', '#8f5ab8', '#fd1105', '#7ea7cf', '#d77cd1', '#a9804b', '#0688b4', '#6a9f3e', '#ee8fba', '#a67389', '#9e8cfe', '#bd443c', '#6d63ff', '#d110d5', '#798cc3', '#df5f83', '#b1b853', '#bb59d8', '#1d960c', '#867ba8', '#18acc9', '#25b3a7', '#f3db1d', '#938c6d', '#936a24', '#a964fb', '#92e460', '#a05787', '#9c87a0', '#20c773', '#8b696d', '#78762d', '#638ba8', '#e154c6', '#40835f', '#d73656', '#1afd5c', '#c4f546', '#3d88d8', '#bd3896', '#1397a3', '#f940a5', '#66aeff', '#d097e7', '#fe6ef9', '#d86507', '#8b900a', '#d47270', '#e8ac48', '#cf7c97', '#cebb11', '#718a90', '#e78139', '#ff7463', '#bea1fd', '#f81d47', '#72b93c', '#7ba66a', '#656dc4', '#3a8278', '#66988b', '#a384d5', '#b35a3b', '#e07cfd', '#27cf4c', '#b224d4', '#b39579', '#b68f38', '#e51188', '#938747', '#5eb195', '#bba85b', '#f39f5a', '#9961a0', '#bd60b6', '#14a147', '#db8c67', '#9bc52e', '#96a0cd', '#7b68ac', '#039762', '#cf15fd', '#d1583d', '#b77163'])
       this.fill = fill
@@ -459,7 +490,10 @@ export default {
         })
         .style('text-anchor', d => d.angle > Math.PI ? 'end' : null)
         .style('fill', d => fill(d.index))
-        .style('text-shadow', '0 0 3px black, 0 0 4px black ,0 0 5px black')
+        .style('stroke', d => fill(d.index))
+        .style('text-shadow', () => {
+          if (this.dark === true) return '0 0 3px black, 0 0 4px black ,0 0 5px black'
+        })
         .style('cursor', 'pointer')
         .text(d => this.nameByIndex.get(d.index))
 
