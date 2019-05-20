@@ -151,6 +151,7 @@ const defaultChordOpacity = 0.8
 const inactiveChordOpacity = 0.1
 const defaultGroupOpacity = 0.9
 const inactiveGroupOpacity = 0.4
+const linkGroupOpacity = 0.7
 
 export default {
   data () {
@@ -426,8 +427,13 @@ export default {
           }
         }
 
+        const links = []
+        for (const name of this.filteredComponents[newValue].imports.length ? this.filteredComponents[newValue].imports : this.filteredComponents[newValue].related) {
+          links.push(this.indexByName['$' + name])
+        }
         for (const group of this.groups) {
-          group.style.opacity = group.__data__.index === newValue ? defaultGroupOpacity : inactiveGroupOpacity
+          group.style.opacity = group.__data__.index === newValue ? defaultGroupOpacity
+            : links.includes(group.__data__.index) ? linkGroupOpacity : inactiveGroupOpacity
         }
 
         this.hasActiveComponent = hasActiveComponent
