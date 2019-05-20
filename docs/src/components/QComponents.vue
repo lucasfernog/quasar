@@ -11,44 +11,46 @@ Src
   opacity: 0.09
 
 .circle
-  font-size:20px
-  color:#fff
-  text-align:center
-  line-height:0
-  border-radius:50%
-  background:#111
-  opacity: 0.95
-  z-index: 2; /* above svg */
+  font-size 20px
+  color #fff
+  text-align center
+  line-height 0
+  border-radius 50%
+  background #eee
+  opacity 0.8
+  z-index 2 /* above svg */
   border-width 2px
   border-style solid
-  border-color black
-
+  border-color white
+  &--dark
+    background #111
+    border-color black
   .q-card
-    margin: 22px 36px 22px 33px
-    background: transparent
+    margin 5%
+    background transparent
 
     .btn__close
-      position: relative
-      top:-20px
+      margin-top 65%
+      color black
 
     .btn__docs
-      margin-top: 12px
+      margin-top 20%
+      color black
 
     .q-tabs
-      padding-top:3px
+      padding-top 3px
 
     .q-tab
-      border-radius: 20px 20px 0 0
+      border-radius 20px 20px 0 0
 
     .q-tab-panels
-      border-radius: 0 0 10px 10px!important
-      height: 180px
+      border-radius 0 0 10px 10px!important
+      height 80%
 
 .components__root
-  min-width:100%
-  width:100%
-  margin-top:300px
-  height:750px
+  min-width 100%
+  width 100%
+  height 750px
 
   &--dark
     background-image: radial-gradient(circle closest-side, rgba(0,0,0,0.9), rgba(0,0,0,.8), rgba(0,0,0,0))
@@ -58,39 +60,40 @@ svg
 </style>
 
 <template lang="pug">
-  div.column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
-    div.row
+  .column.relative-position.components__root(:class="{'components__root--dark': this.dark}")
+    .row
       svg.absolute-center(:width="width" :height="height")
-      div.quasar__logo.absolute-center(v-show="!showComponentDetails" :style="dimensions")
+      .quasar__logo.absolute-center(v-show="!showComponentDetails" :style="dimensions")
         img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
-      div.circle.absolute-center(v-if="showComponentDetails" ref="circle" :style="dimensions")
-        q-card(v-if="focusedComponentIndex !== null" dark flat :style="cardDimensions")
-          q-btn.btn__close(flat round dense icon="close" @click="showComponentDetails = false")
-          .row(style="margin-top:-20px")
-            .col-2
-            q-field.col-8(v-if="!search" dense dark rounded outlined bg-color="grey-10")
+      .circle.absolute-center(v-if="showComponentDetails" ref="circle" :style="dimensions")
+        q-card(v-if="focusedComponentIndex !== null" flat :style="cardDimensions")
+          .row(style="margin-top:-10px")
+            .col-1
+            q-field.col-10.absolute-center(v-if="!search" dense rounded outlined bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="search" @click="search = true" style="margin-right:-8px")
               template(v-slot:control)
-                div.self-center.full-width.no-outline(@click="search = true" style="font-weight:800;font-size:1.2em")
+                div.self-center.full-width.no-outline.text-center(@click="search = true" style="font-weight:800;font-size:1.2em;margin-left:8px")
                   span {{ filteredComponents[focusedComponentIndex].name }}
-            q-input.col-8(v-else v-model="filter" rounded outlined dense dark bg-color="grey-10" placeholder="Search Components" debounce="500" ref="search")
+            q-input.col-10.absolute-center(v-else v-model="filter" rounded outlined dense placeholder="Search" debounce="500" ref="search" bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
-          q-tabs(v-model="tab" dense)
+          // q-tabs(v-model="tab" dense)
             q-tab(name="description" label="Description")
             q-tab(name="example" label="Example")
-          q-tab-panels(v-model="tab")
+          // q-tab-panels(v-model="tab")
             q-tab-panel.text-amber-1.bg-black(name="description") Test description
             q-tab-panel.text-amber-1.bg-black(name="example") Test example
-          q-btn.btn__docs(flat label="full documentation")
+          .row.absolute-center.btn__docs
+            q-btn(flat label="docs" :to="route(filteredComponents[focusedComponentIndex].name)")
+            q-btn(flat label="api")
+          q-btn.btn__close.absolute-center(flat round dense icon="close" @click="showComponentDetails = false")
 
-      doc-api.absolute-bottom(
+      doc-api.relative-bottom.full-width(
         v-if="showComponentDetails"
         :file="filteredComponents[focusedComponentIndex].name"
-        :style="{top: Math.min(685, this.height * 1.1) + 'px'}"
+        :style="{top: Math.min(685, this.height * 1.1) + 'px', 'z-index': 1}"
       )
-
 </template>
 
 <script>
@@ -155,12 +158,16 @@ export default {
     dark: Boolean,
     width: {
       type: Number,
-      default: 300
+      default: 600
     },
 
     height: {
       type: Number,
-      default: 500
+      default: 600
+    },
+    active: {
+      type: String,
+      default: null
     }
   },
 
@@ -210,6 +217,10 @@ export default {
           this.mutateFocusedComponentIndex(amount > 0 ? 1 : -1)
         }
       })
+    },
+
+    route (component) {
+      return `/vue-components/${component.split('Q')[1].replace(/\W+/g, '-').replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase()}`
     },
 
     __mouseMove (e) {
@@ -443,7 +454,10 @@ export default {
         })
         .style('text-anchor', d => d.angle > Math.PI ? 'end' : null)
         .style('fill', d => fill(d.index))
-        .style('text-shadow', '0 0 3px black, 0 0 4px black ,0 0 5px black')
+        .style('stroke', d => fill(d.index))
+        .style('text-shadow', () => {
+          if (this.dark === true) return '0 0 3px black, 0 0 4px black ,0 0 5px black'
+        })
         .style('cursor', 'pointer')
         .text(d => this.nameByIndex.get(d.index))
 

@@ -25,8 +25,6 @@
       .landing__arrow.text-center
         q-icon(name="expand_more").text-h2.text-white
 
-      q-components(dark interactive :width="900" :height="900")
-
   section.padding.landing__front.text-center
     div
       div.q-mb-lg Quasar (pronounced /ˈkweɪ.zɑɹ/) is an MIT licensed open-source Vue.js based framework, which allows you as a web developer to quickly create responsive++ websites/apps in many flavours:
