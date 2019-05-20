@@ -31,7 +31,7 @@ For landscape mode, you can use it along with `$q.screen` to make QDate responsi
 
 ### Functionality
 
-QDate requires a default year + month when model is unfilled (like `null`, `void 0`/`undefined`).
+When model is unfilled (like `null`, `void 0`/`undefined`) QDate still has to show the calendar for a month of a year. You can use `default-year-month` prop for this, otherwise the current month of the year will be shown:
 
 <doc-example title="Default year month" file="QDate/DefaultYearMonth" />
 
@@ -49,11 +49,21 @@ Clicking on the "Today" button sets date to current user date. Requires the head
 
 <doc-example title="Disable and readonly" file="QDate/DisableReadonly" />
 
-### Custom model mask
+### Model mask
 
-The `mask` prop format can be found at [Quasar Utils > Date utils](/quasar-utils/date-utils#Format-for-display).
+The default model mask is `YYYY/MM/DD`, however you can use custom ones too.
 
-<doc-example title="Custom mask" file="QDate/CustomMask" />
+The `mask` prop tokens can be found at [Quasar Utils > Date utils](/quasar-utils/date-utils#Format-for-display).
+
+<doc-example title="Simple mask" file="QDate/MaskSimple" />
+
+If you want to insert strings into your mask, make sure you escape them by surrounding them with `[` and `]`, otherwise the characters might be interpreted as format tokens.
+
+<doc-example title="Mask with escaped characters" file="QDate/MaskEscape" />
+
+Using the mask to connect a QDate and [QTime](/vue-components/time) to the same model:
+
+<doc-example title="QDate and QTime on same model" file="QDate/MaskDateTime" />
 
 ### Custom ad-hoc locale
 
@@ -88,7 +98,12 @@ The first example is using an array and the second example is using a function.
 More info: [QSplitter](/vue-components/splitter), [QTabPanels](/vue-components/tab-panels).
 
 ### With QInput
+
 <doc-example title="With QInput" file="QDate/Input" />
+
+Connecting a QDate and QTime with same model on a QInput:
+
+<doc-example title="QDate and QTime with QInput" file="QDate/InputFull" />
 
 More info: [QInput](/vue-components/input).
 
