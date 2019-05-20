@@ -127,6 +127,9 @@ process.on('exit', () => {
       }
     }
     return false
+  }).map(comp => {
+    const { api, ...data } = comp
+    return data
   })
   fs.writeFileSync(path.join(__dirname, '../src/statics/quasar-api.json'), JSON.stringify(components, '', 2))
 })
