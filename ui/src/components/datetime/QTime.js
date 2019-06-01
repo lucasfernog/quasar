@@ -129,13 +129,17 @@ export default Vue.extend({
     pointerStyle () {
       const
         forHour = this.view === 'Hour',
-        divider = forHour ? 12 : 60,
+        divider = forHour === true ? 12 : 60,
         amount = this.innerModel[this.view.toLowerCase()],
         degrees = Math.round(amount * (360 / divider)) - 180
 
       let transform = `rotate3d(0,0,1,${degrees}deg) translate3d(-50%,0,0)`
 
-      if (forHour && this.computedFormat24h && !(this.innerModel.hour > 0 && this.innerModel.hour < 13)) {
+      if (
+        forHour === true &&
+        this.computedFormat24h === true &&
+        !(this.innerModel.hour > 0 && this.innerModel.hour < 13)
+      ) {
         transform += ' scale3d(.7,.7,.7)'
       }
 
@@ -147,7 +151,7 @@ export default Vue.extend({
     },
 
     secLink () {
-      return this.minLink && this.innerModel.minute !== null
+      return this.minLink === true && this.innerModel.minute !== null
     },
 
     hourInSelection () {
@@ -496,9 +500,7 @@ export default Vue.extend({
                   modifiers: {
                     stop: true,
                     prevent: true,
-                    mouse: true,
-                    mouseStop: true,
-                    mousePrevent: true
+                    mouse: true
                   }
                 }]
               }, [
@@ -618,7 +620,7 @@ export default Vue.extend({
     },
 
     __getComputedMask () {
-      return this.mask !== null
+      return this.calendar !== 'persian' && this.mask !== null
         ? this.mask
         : `HH:mm${this.withSeconds === true ? ':ss' : ''}`
     },
@@ -629,20 +631,24 @@ export default Vue.extend({
         ...obj
       }
 
-      const val = formatDate(
-        new Date(
-          date.year,
-          date.month === null ? null : date.month - 1,
-          date.day,
-          date.hour,
-          date.minute,
-          date.second,
-          date.millisecond
-        ),
-        this.computedMask,
-        this.computedLocale,
-        date.year
-      )
+      const val = this.calendar === 'persian'
+        ? pad(date.hour) + ':' +
+          pad(date.minute) +
+          (this.withSeconds === true ? ':' + pad(date.second) : '')
+        : formatDate(
+          new Date(
+            date.year,
+            date.month === null ? null : date.month - 1,
+            date.day,
+            date.hour,
+            date.minute,
+            date.second,
+            date.millisecond
+          ),
+          this.computedMask,
+          this.computedLocale,
+          date.year
+        )
 
       if (val !== this.value) {
         this.$emit('input', val)
