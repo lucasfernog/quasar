@@ -88,7 +88,7 @@ fs.readdirSync(componentsPath).forEach(componentDir => {
       .then(files => {
         files.forEach(file => {
           let component = ''
-          if (file.endsWith('.js') && apis.includes(component = file.replace('.js', ''))) {
+          if (file.endsWith('.js') && apis.includes(component = file.replace('Base.js', '').replace('.js', ''))) {
             const componentData = quasarApi[component]
             componentData.group = group
 
@@ -117,16 +117,19 @@ process.on('exit', () => {
       ...entry[1]
     }
   }).filter(comp => {
-    if (comp.imports.length) {
+    if (comp.imports.length || comp.related.length) {
       return true
     }
     for (let otherCompName in quasarApi) {
       const otherComp = quasarApi[otherCompName]
-      if (otherComp.name !== comp.name && otherComp.imports.includes(comp.name)) {
+      if (otherComp.name !== comp.name && (otherComp.imports.includes(comp.name) || otherComp.related.includes(comp.name))) {
         return true
       }
     }
     return false
+  }).map(comp => {
+    const { api, ...data } = comp
+    return data
   })
   fs.writeFileSync(path.join(__dirname, '../src/statics/quasar-api.json'), JSON.stringify(components, '', 2))
 })

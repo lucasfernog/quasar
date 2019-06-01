@@ -589,6 +589,10 @@ const plugins = [
 
 const components = [
   {
+    name: 'Discover',
+    path: 'discover'
+  },
+  {
     name: 'Ajax Bar',
     path: 'ajax-bar'
   },
