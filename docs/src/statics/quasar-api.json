@@ -43,25 +43,6 @@
       "QCircularProgress",
       "QInnerLoading",
       "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail",
       "LoadingBar",
       "QAjaxBar"
     ],
@@ -252,25 +233,6 @@
       "QLinearProgress",
       "QInnerLoading",
       "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail",
       "Loading",
       "LoadingBar"
     ],
@@ -352,7 +314,7 @@
       "QSlideTransition"
     ],
     "group": "QList",
-    "description": "<p>The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.\nThey are basically <doc-link to=\"/vue-components/list-and-list-items\">QItem</doc-link> components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.</p>\n"
+    "description": "<p>The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on. It’s also known as a collapsible.\nThey are basically <doc-link to=\"/vue-components/list-and-list-items\">QItem</doc-link> components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.</p>\n"
   },
   {
     "name": "QFab",
@@ -457,54 +419,16 @@
       "QSpinner"
     ],
     "related": [
-      "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail"
+      "QSpinner"
     ],
     "group": "QImg",
-    "description": "<p>The QImg component makes working with images easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio).</p>\n"
+    "description": "<p>The QImg component makes working with images (any picture format) easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio).</p>\n"
   },
   {
     "name": "QInfiniteScroll",
     "imports": [],
     "related": [
       "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail",
       "QPullToRefresh"
     ],
     "group": "QInfiniteScroll",
@@ -519,25 +443,6 @@
       "QLinearProgress",
       "QCircularProgress",
       "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail",
       "Loading",
       "LoadingBar"
     ],
@@ -625,25 +530,6 @@
       "QCircularProgress",
       "QInnerLoading",
       "QSpinner",
-      "QSpinnerAudio",
-      "QSpinnerBall",
-      "QSpinnerBars",
-      "QSpinnerComment",
-      "QSpinnerCube",
-      "QSpinnerDots",
-      "QSpinnerFacebook",
-      "QSpinnerGears",
-      "QSpinnerGrid",
-      "QSpinnerHearts",
-      "QSpinnerHourglass",
-      "QSpinnerInfinity",
-      "QSpinnerIos",
-      "QSpinnerOval",
-      "QSpinnerPie",
-      "QSpinnerPuff",
-      "QSpinnerRadio",
-      "QSpinnerRings",
-      "QSpinnerTail",
       "Loading",
       "LoadingBar"
     ],
@@ -917,6 +803,15 @@
     "description": "<p>The QSlideItem component is essentially a <doc-link to=\"/vue-components/list-and-list-items\">QItem</doc-link> with two additional slots (<code class=\"doc-token\">left</code> and <code class=\"doc-token\">right</code>) which allows user to drag the item (through mouse or with the finger on a touch device) to one of the sides in order to apply a specific action.</p>\n"
   },
   {
+    "name": "QSlideTransition",
+    "imports": [],
+    "related": [
+      "QExpansionItem"
+    ],
+    "group": "QSlideTransition",
+    "description": "<p>QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside <code class=\"doc-token\">v-show</code> and <code class=\"doc-token\">v-if</code> on a single element, similar to Vue’s Transition component with the only difference being that it’s not a group transition too (it only applies to one DOM element or component).</p>\n"
+  },
+  {
     "name": "QSlider",
     "imports": [],
     "related": [
@@ -927,263 +822,7 @@
     "description": "<p>The QSlider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values. The slider also has a focus indicator (highlighted slider button), which allows for keyboard adjustments of the slider.\nAlso check its “sibling”, the <doc-link to=\"/vue-components/range\">QRange</doc-link> component.</p>\n"
   },
   {
-    "name": "QSlideTransition",
-    "imports": [],
-    "related": [
-      "QExpansionItem"
-    ],
-    "group": "QSlideTransition",
-    "description": "<p>QSlideTransition slides the DOM element (or component) up or down, based on its visibility: works alongside <code class=\"doc-token\">v-show</code> and <code class=\"doc-token\">v-if</code> on a single element, similar to Vue’s Transition component with the only difference being that it’s not a group transition too (it only applies to one DOM element or component).</p>\n"
-  },
-  {
     "name": "QSpinner",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerAudio",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerBall",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerBars",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerComment",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerCube",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerDots",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerFacebook",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerGears",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerGrid",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerHearts",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerHourglass",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerInfinity",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerIos",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerOval",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerPie",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerPuff",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerRadio",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerRings",
-    "imports": [],
-    "related": [
-      "QLinearProgress",
-      "QCircularProgress",
-      "QInnerLoading",
-      "Loading",
-      "LoadingBar"
-    ],
-    "group": "QSpinner",
-    "description": "<p>A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.</p>\n"
-  },
-  {
-    "name": "QSpinnerTail",
     "imports": [],
     "related": [
       "QLinearProgress",
@@ -1233,16 +872,6 @@
     "description": "<p>Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.\nOne common use case for this component is in Layout’s header/footer. Please refer to <doc-link to=\"/layout/layout\">Layouts</doc-link> and <doc-link to=\"/layout/header-and-footer#Example--Playing-with-QTabs\">Header &amp; Footer</doc-link> for references.</p>\n"
   },
   {
-    "name": "QTable",
-    "imports": [],
-    "related": [
-      "QMarkupTable",
-      "QPagination"
-    ],
-    "group": "QTable",
-    "description": "<p>QTable is a component that allows you to display data in a tabular manner. It’s generally called a datatable. It packs the following main features:</p>\n<ul>\n<li>Filtering</li>\n<li>Sorting</li>\n<li>Single / Multiple rows selection with custom selection actions</li>\n<li>Pagination (including server-side if required)</li>\n<li>Grid mode (you can use for example QCards to display data in a non-tabular manner)</li>\n<li>Total customization of rows and cells through scoped slots</li>\n<li>Ability to add additional row(s) at top or bottom of data rows</li>\n<li>Column picker (through QTableColumns component described in one of the sections)</li>\n<li>Custom top and/or bottom Table controls</li>\n<li>Responsive design</li>\n</ul>\n"
-  },
-  {
     "name": "QTabPanel",
     "imports": [],
     "related": [
@@ -1263,6 +892,16 @@
     ],
     "group": "QTabPanels",
     "description": "<p>Tab panels are a way of displaying more information using less window real estate.</p>\n"
+  },
+  {
+    "name": "QTable",
+    "imports": [],
+    "related": [
+      "QMarkupTable",
+      "QPagination"
+    ],
+    "group": "QTable",
+    "description": "<p>QTable is a component that allows you to display data in a tabular manner. It’s generally called a datatable. It packs the following main features:</p>\n<ul>\n<li>Filtering</li>\n<li>Sorting</li>\n<li>Single / Multiple rows selection with custom selection actions</li>\n<li>Pagination (including server-side if required)</li>\n<li>Grid mode (you can use for example QCards to display data in a non-tabular manner)</li>\n<li>Total customization of rows and cells through scoped slots</li>\n<li>Ability to add additional row(s) at top or bottom of data rows</li>\n<li>Column picker (through QTableColumns component described in one of the sections)</li>\n<li>Custom top and/or bottom Table controls</li>\n<li>Responsive design</li>\n</ul>\n"
   },
   {
     "name": "QTabs",
@@ -1442,7 +1081,7 @@
       "TouchPan",
       "TouchSwipe"
     ],
-    "description": "<p>Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: <code class=\"doc-token\">v-touch-pan</code>, <code class=\"doc-token\">v-touch-swipe</code>, <code class=\"doc-token\">v-touch-hold</code> and even <code class=\"doc-token\">v-touch-repeat</code>.</p>\n<blockquote class=\"doc-note\">\n<p><strong>These directives also work with mouse events, not only touch events</strong>, so you are able to build cool functionality for your App on desktops too.\nWe will be describing <code class=\"doc-token\">v-touch-hold</code> on the lines below.</p>\n</blockquote>\n"
+    "description": "<p>Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: <code class=\"doc-token\">v-touch-pan</code>, <code class=\"doc-token\">v-touch-swipe</code>, <code class=\"doc-token\">v-touch-hold</code> and even <code class=\"doc-token\">v-touch-repeat</code>.</p>\n<blockquote class=\"doc-note\">\n<p><strong>These directives also work with mouse events, not only touch events</strong>, so you are able to build cool functionality for your App on desktops too.\nWe will be describing <code class=\"doc-token\">v-touch-hold</code> directive on the lines below.</p>\n</blockquote>\n"
   },
   {
     "name": "TouchPan",

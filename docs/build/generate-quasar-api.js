@@ -38,8 +38,8 @@ Promise.all(apiReadPromises)
       const api = quasarApi[apiName].api
       const docStream = fs.createReadStream(
         path.join(
-          docPagesPath, 
-          api.docs.route, 
+          docPagesPath,
+          api.docs.route,
           api.docs.page + '.md'
         )
       )
@@ -57,7 +57,9 @@ Promise.all(apiReadPromises)
           let relatedPage = tokens[tokens.length - 1]
           for (let other in quasarApi) {
             if (quasarApi[other].api.docs.route === relatedRoute && quasarApi[other].api.docs.page === relatedPage) {
-              quasarApi[apiName].related.push(other)
+              if (!(other.startsWith('QSpinner') && other.length > 'QSpinner'.length)) {
+                quasarApi[apiName].related.push(other)
+              }
             }
           }
         }
@@ -117,6 +119,9 @@ process.on('exit', () => {
       ...entry[1]
     }
   }).filter(comp => {
+    if (comp.name.startsWith('QSpinner') && comp.name.length > 'QSpinner'.length) {
+      return false
+    }
     if (comp.imports.length || comp.related.length) {
       return true
     }
