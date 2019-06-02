@@ -11,7 +11,7 @@ Src
   opacity: 0.09
 
 .circle
-  font-size 20px
+  font-size 1.2em
   color #fff
   text-align center
   line-height 0
@@ -19,18 +19,19 @@ Src
   background #eee
   opacity 0.8
   z-index 2 /* above svg */
-  border-width 2px
+  border-width 0.2em
   border-style solid
   border-color white
+  height 100%
   &--dark
     background #111
     border-color black
   .q-card
-    margin 5%
+    margin 20% auto
     background transparent
 
     .btn__close
-      margin-top 65%
+      margin-top -40%
       color black
 
     .btn__docs
@@ -51,9 +52,9 @@ Src
         height: 160px
 
       p
-        line-height: 1
-        height: 140px
-        overflow-y: auto
+        line-height 1
+        height 140px
+        overflow-y auto
         margin-bottom 0
         text-align left
 
@@ -77,15 +78,16 @@ svg
         img(src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg")
       .circle.absolute-center(v-if="showComponentDetails" ref="circle" :style="dimensions")
         q-card(v-if="focusedComponentIndex !== null" flat :style="cardDimensions")
-          .row(style="margin-top:-10px")
-            .col-1
-            q-field.col-10.absolute-center(v-if="!search" dense rounded outlined bg-color="white")
+          .row
+            q-btn.btn__close.absolute-center(flat round dense icon="close" @click="showComponentDetails = false")
+          .row
+            q-field.col-12.absolute-center(v-if="!search" dense rounded outlined bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="search" @click="search = true" style="margin-right:-8px")
               template(v-slot:control)
-                div.self-center.full-width.no-outline.text-center(@click="search = true" style="font-weight:800;font-size:1.2em;margin-left:8px")
-                  span {{ filteredComponents[focusedComponentIndex].name }}
-            q-input.col-10.absolute-center(v-else v-model="filter" rounded outlined dense placeholder="Search" debounce="500" ref="search" bg-color="white")
+                div.self-center.full-width.no-outline.text-center(@click="search = true")
+                  span(style="left:13px;position:relative;font-weight:800;font-size:1.2em") {{ filteredComponents[focusedComponentIndex].name }}
+            q-input.col-12.absolute-center(v-else v-model="filter" rounded outlined dense placeholder="Search" debounce="500" ref="search" bg-color="white")
               template(v-slot:append)
                 q-btn(flat round size="sm" icon="close" @click="search = false" style="margin-right:-8px")
           // q-tabs(v-model="tab" dense)
@@ -99,14 +101,13 @@ svg
                   q-item(@click="onRelatedClick(related)" clickable v-ripple v-for="related in focusedComponentRelated" :key="related")
                     q-item-section {{ related }}
           .row.absolute-center.btn__docs
-            q-btn(flat label="docs" :to="route(filteredComponents[focusedComponentIndex].name)")
-            q-btn(flat label="api")
-          q-btn.btn__close.absolute-center(flat round dense icon="close" @click="showComponentDetails = false")
+            q-btn(color="white" text-color="black" size="sm" label="Full documentation" :to="route(filteredComponents[focusedComponentIndex].name)")
+            // q-btn(flat label="api")
 
       doc-api.relative-bottom.full-width(
         v-if="showComponentDetails"
         :file="filteredComponents[focusedComponentIndex].name"
-        :style="{top: Math.min(685, this.height * 1.1) + 'px', 'z-index': 1}"
+        :style="{top: Math.min(760, this.height * 2) + 'px', 'z-index': 1}"
       )
 </template>
 
@@ -175,7 +176,6 @@ export default {
       type: Number,
       default: 600
     },
-
     height: {
       type: Number,
       default: 600
