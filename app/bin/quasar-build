@@ -83,10 +83,6 @@ const
 require('../lib/helpers/ensure-argv')(argv, 'build')
 banner(argv, 'build')
 
-if (argv.mode !== 'spa') {
-  require('../lib/mode/install-missing')(argv.mode, argv.target)
-}
-
 const
   path = require('path'),
   webpack = require('webpack')
@@ -116,15 +112,16 @@ function finalize (mode, quasarConfig) {
     if (mode === 'electron') {
       return require('../lib/electron').build(quasarConfig)
     }
-    if (mode === 'webview') {
-      return require('../lib/webview').build(quasarConfig)
-    }
   }
 
   return Promise.resolve()
 }
 
 async function build () {
+  if (argv.mode !== 'spa') {
+    await require('../lib/mode/install-missing')(argv.mode, argv.target)
+  }
+
   const ctx = getQuasarCtx({
     mode: argv.mode,
     target: argv.target,

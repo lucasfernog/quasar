@@ -3,14 +3,16 @@ const fs = require('fs'),
   appPaths = require('../app-paths'),
   logger = require('../helpers/logger'),
   log = logger('app:mode-webview'),
-  warn = logger('app:mode-webview', 'red')
+  warn = logger('app:mode-webview', 'red'),
+  Extension = require('../app-extension/Extension.js'),
+  extension = new Extension('@quasar/portal')
 
 class Mode {
   get isInstalled() {
     return fs.existsSync(appPaths.webviewDir)
   }
 
-  add() {
+  async add() {
     if (this.isInstalled) {
       warn(`WebView support detected already. Aborting.`)
       return
@@ -19,18 +21,19 @@ class Mode {
     log('Creating WebView source folder...')
 
     fs.mkdirSync(appPaths.webviewDir)
-    fse.copySync(appPaths.resolve.cli('templates/webview/rust-app'), appPaths.webviewDir)
 
+    await extension.install(extension.isInstalled())
     log(`WebView support was installed`)
   }
 
-  remove() {
+  async remove() {
     if (!this.isInstalled) {
       warn(`No WebView support detected. Aborting.`)
       return
     }
 
     fse.removeSync(appPaths.webviewDir)
+    await extension.uninstall()
     log(`WebView support was removed`)
   }
 }

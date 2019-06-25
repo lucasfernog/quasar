@@ -61,10 +61,6 @@ if (argv.help) {
 require('../lib/helpers/ensure-argv')(argv, 'dev')
 require('../lib/helpers/banner')(argv, 'dev')
 
-if (argv.mode !== 'spa') {
-  require('../lib/mode/install-missing')(argv.mode, argv.target)
-}
-
 const findPort = require('../lib/helpers/net').findClosestOpenPort
 
 async function parseAddress ({ host, port }) {
@@ -122,6 +118,9 @@ async function parseAddress ({ host, port }) {
 }
 
 async function goLive () {
+  if (argv.mode !== 'spa') {
+    await require('../lib/mode/install-missing')(argv.mode, argv.target)
+  }
   const
     DevServer = require('../lib/dev-server'),
     QuasarConfig = require('../lib/quasar-config'),
@@ -180,8 +179,7 @@ async function goLive () {
   const
     generator = new Generator(quasarConfig),
     Cordova = argv.mode === 'cordova' ? require('../lib/cordova') : false,
-    Electron = argv.mode === 'electron' ? require('../lib/electron') : false,
-    WebView = argv.mode === 'webview' ? require('../lib/webview') : false
+    Electron = argv.mode === 'electron' ? require('../lib/electron') : false
 
   function startDev (oldDevServer) {
     let devServer
@@ -193,7 +191,6 @@ async function goLive () {
       .then(() => devServer.listen()) // Start listening
       .then(() => Electron && Electron.run(quasarConfig))
       .then(() => Cordova && Cordova.run(quasarConfig))
-      .then(() => WebView && WebView.run(quasarConfig))
       .then(() => devServer) // Pass new builder to watch chain
   }
 
