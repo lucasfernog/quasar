@@ -29,6 +29,7 @@ module.exports = class IndexAPI {
       extendWebpackMainElectronProcess: [],
       chainWebpack: [],
       beforeDev: [],
+      afterDev: [],
       beforeBuild: [],
       afterBuild: [],
       onPublish: [],
@@ -196,7 +197,7 @@ module.exports = class IndexAPI {
 
   /**
    * Register a command that will become available as
-   * `quasar run <ext-id> <cmd> [args]`.
+   * `quasar run <ext-id> <cmd> [args]` and `quasar <ext-id> <cmd> [args]`
    *
    * @param {string} commandName
    * @param {function} fn
@@ -226,6 +227,18 @@ module.exports = class IndexAPI {
    */
   beforeDev (fn) {
     this.__addHook('beforeDev', fn)
+  }
+
+  /**
+   * Run hook after Quasar dev server is started ($ quasar dev).
+   * At this point, the dev server has been started and is available
+   * should you wish to do something with it.
+   *
+   * @param {function} fn
+   *   () => ?Promise
+   */
+  afterDev(fn) {
+    this.__addHook('afterDev', fn)
   }
 
   /**
