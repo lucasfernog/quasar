@@ -5,6 +5,7 @@ const list = [
   { name: 'Google Photos', path: 'google-photos' },
   { name: 'Google News', path: 'google-news' },
   { name: 'Whatsapp', path: 'whatsapp' },
+  { name: 'Outlook', path: 'outlook' },
   { name: 'Quasar Classic', path: 'quasar-classic' },
   { name: 'Quasar Classic (Dark)', path: 'quasar-classic-dark' }
 ]
