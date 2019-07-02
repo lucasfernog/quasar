@@ -35,14 +35,21 @@
     >
     <q-scroll-area class="fit">
       <q-list padding>
-        <q-item v-for="menu in menus" :key="menu.id" v-ripple clickable>
-          <q-item-section avatar>
-            <q-icon :name="menu.icon" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>{{ menu.text }}</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-expansion-item
+          v-for="menu in menus" :key="menu.id"
+          switch-toggle-side
+          expand-icon="keyboard_arrow_right"
+          expand-separator
+          :label="menu.text">
+          <q-item v-for="child in menu.children" :key="child.id" v-ripple clickable>
+            <q-item-section avatar>
+              <q-icon :name="child.icon" />
+            </q-item-section>
+            <q-item-section>
+               <q-item-label>{{ child.text }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
         </q-list>
     </q-scroll-area>
     </q-drawer>
@@ -74,20 +81,26 @@ export default {
   data () {
     return {
       leftDrawerOpen: true,
-      miniState: true,
+      miniState: false,
       searchFocused: false,
       splitter: 25,
       search: '',
       menus: [
         {
           id: 1,
-          icon: 'fa fa-inbox',
-          text: 'Inbox'
-        },
-        {
-          id: 2,
-          icon: 'fa fa-paper-plane',
-          text: 'Sent'
+          text: 'Favorites',
+          children: [
+            {
+              id: 1,
+              icon: 'fa fa-inbox',
+              text: 'Inbox'
+            },
+            {
+              id: 2,
+              icon: 'fa fa-paper-plane',
+              text: 'Sent'
+            }
+          ]
         }
       ]
     }
@@ -115,6 +128,9 @@ export default {
   color #323130
 .q-item .q-icon
   color #605e5c
+
+.q-expansion-item__toggle-icon.rotate-180
+  transform: rotate3d(0, 0, 1, 90deg) /* rtl:ignore */;
 
 .search__button
   background #0062AF
