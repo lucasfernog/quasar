@@ -170,7 +170,7 @@
       <q-badge color="orange" label="Outline" outline />
 
       <q-avatar icon="mail" size="60px">
-        <q-badge text-color="red" floating outline>
+        <q-badge text-color="red" floating outline position="left">
           40
         </q-badge>
       </q-avatar>
@@ -182,6 +182,87 @@
         </q-badge>
       </div>
     </div>
+
+    <q-avatar icon="mail" size="60px">
+      <q-badge text-color="red" floating flat>
+        Flat
+      </q-badge>
+    </q-avatar>
+
+    <h3>Position + Align</h3>
+    <q-toggle v-model="floating" label="Floating" />
+
+    <div class="row">
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="left" :floating="floating">
+          Left
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="middle" :floating="floating">
+          Middle
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="right" :floating="floating">
+          Right
+        </q-badge>
+      </q-avatar>
+    </div>
+
+    <div class="row">
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="left" align="top" :floating="floating">
+          Left-top
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="middle" align="top" :floating="floating">
+          Middle-top
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="right" align="top" :floating="floating">
+          Right-top
+        </q-badge>
+      </q-avatar>
+    </div>
+
+    <div class="row">
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="left" align="middle" :floating="floating">
+          Left-middle
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="middle" align="middle" :floating="floating">
+          Middle-middle
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="right" align="middle" :floating="floating">
+          Right-middle
+        </q-badge>
+      </q-avatar>
+    </div>
+
+    <div class="row">
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="left" align="bottom" :floating="floating">
+          Left-bottom
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="middle" align="bottom" :floating="floating">
+          Middle-bottom
+        </q-badge>
+      </q-avatar>
+      <q-avatar icon="mail" size="120px">
+        <q-badge text-color="red" flat position="right" align="bottom" :floating="floating">
+          Right-bottom
+        </q-badge>
+      </q-avatar>
+    </div>
   </div>
 </template>
 
@@ -189,7 +270,8 @@
 export default {
   data () {
     return {
-      dense: false
+      dense: false,
+      floating: false
     }
   }
 }

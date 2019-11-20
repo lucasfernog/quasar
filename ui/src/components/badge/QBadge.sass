@@ -20,6 +20,15 @@
     top: -4px
     right: -3px
     cursor: inherit
+    &.q-badge--left
+      right: initial
+      left: -3px
+    &.q-badge--align-bottom
+      top: initial
+      bottom: -3px
+    &.q-badge--align-top
+      top: -3px
+      right: initial
 
   &--transparent
     opacity: 0.8
@@ -27,3 +36,26 @@
   &--outline
     background-color: transparent
     border: 1px solid currentColor
+
+  &--flat
+    background-color: transparent
+
+  &--left
+    position absolute
+    left -4px
+
+  &--middle
+    position absolute
+    left 4px
+    right 4px
+    justify-content center
+
+  &--right
+    position absolute
+    right -4px
+
+  &--align-top
+    top: -4px
+
+  &--align-bottom
+    bottom: -4px

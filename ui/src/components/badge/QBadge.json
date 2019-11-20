@@ -49,6 +49,20 @@
       "desc": "Use 'outline' design (colored text and borders only)",
       "category": "content",
       "addedIn": "1.4.5"
+    },
+
+    "flat": {
+      "type": "Boolean",
+      "desc": "Use 'flat' design (colored text only)",
+      "category": "content",
+      "addedIn": "1.5.0"
+    },
+
+    "position": {
+      "type": "String",
+      "desc": "Position within the container",
+      "values": ["left", "middle", "right"],
+      "category": "content"
     }
   },
 
